@@ -5,9 +5,32 @@
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	</head>
 	<body>
-		<h1>Memory - Het spel</h1>
-		<p>Under construction</p>
+		<div class="grid-11 push-left-1">
+			<header>
+				<h1>Memory</h1>
+			</header>
+			<main>
+				<section class="grid-2">
+					<h3 id="js-name1">Speler 1</h3>
+					<form class="js-player" action="index.html">
+						<input type="text" value="Player1" id="player1">
+						<input type="submit" value="Play!" class="js-play" id="play1">
+					</form>
+				</section>
+				<section class="grid-7">
+					<h3>Board</h3>
 
-		<script src="layout/js/memory.js"></script>
+				</section>
+				<section class="grid-2">
+					<h3 id="js-name2">Speler 2</h3>
+					<form class="js-player" action="index.html">
+						<input type="text" value="Player2" id="player2">
+						<input type="submit" value="Play!" class="js-play" id="play2">
+					</form>
+				</section>
+			</main>
+		</div>
+		<script src="layout/js/jquery.js"></script>
+		<script src="layout/js/min/memory-ck.js"></script>
 	</body>
 </html>
