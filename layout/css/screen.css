@@ -5,16 +5,16 @@
 	Patterns
 */
 /* line 8, ../scss/shared/_mixins.scss */
-.pagination, .pagination-centered, .row, .header .inner, .main-nav ul {
+.pagination, .pagination-centered, .header .inner, .main-nav ul, .board__frame {
   *zoom: 1;
 }
 /* line 11, ../scss/shared/_mixins.scss */
-.pagination:before, .pagination-centered:before, .row:before, .header .inner:before, .main-nav ul:before, .pagination:after, .pagination-centered:after, .row:after, .header .inner:after, .main-nav ul:after {
+.pagination:before, .pagination-centered:before, .header .inner:before, .main-nav ul:before, .board__frame:before, .pagination:after, .pagination-centered:after, .header .inner:after, .main-nav ul:after, .board__frame:after {
   display: table;
   content: "";
 }
 /* line 17, ../scss/shared/_mixins.scss */
-.pagination:after, .pagination-centered:after, .row:after, .header .inner:after, .main-nav ul:after {
+.pagination:after, .pagination-centered:after, .header .inner:after, .main-nav ul:after, .board__frame:after {
   clear: both;
 }
 
@@ -28,12 +28,7 @@
 	User Interface Elements
 */
 /* line 7, ../scss/shared/_ui.scss */
-.btn,
-a.btn, .btn-secondary,
-input.btn-secondary,
-input[type="submit"].btn-secondary,
-a.btn-secondary, input[type="submit"],
-button {
+.btn {
   border-radius: 5px;
   position: relative;
   display: block;
@@ -52,9 +47,7 @@ button {
   -webkit-font-smoothing: antialiased;
 }
 /* line 25, ../scss/shared/_ui.scss */
-.btn:hover, .btn-secondary:hover, input[type="submit"]:hover,
-button:hover, .btn:visited, .btn-secondary:visited, input[type="submit"]:visited,
-button:visited {
+.btn:hover, .btn:visited {
   text-decoration: none;
 }
 
@@ -131,17 +124,10 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   display: block;
 }
 
-/* line 3, ../scss/patterns/_grid.scss */
-.row {
-  margin: 0 auto;
-  max-width: 60em;
-}
-/* line 7, ../scss/patterns/_grid.scss */
-.row .row {
-  padding: 0;
-}
-
-/* line 14, ../scss/patterns/_grid.scss */
+/*
+	Grid
+*/
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-1 {
   width: 100%;
   float: left;
@@ -150,7 +136,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-2 {
   width: 100%;
   float: left;
@@ -159,7 +145,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-3 {
   width: 100%;
   float: left;
@@ -168,7 +154,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-4 {
   width: 100%;
   float: left;
@@ -177,7 +163,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-5 {
   width: 100%;
   float: left;
@@ -186,7 +172,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-6 {
   width: 100%;
   float: left;
@@ -195,7 +181,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-7 {
   width: 100%;
   float: left;
@@ -204,7 +190,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-8 {
   width: 100%;
   float: left;
@@ -213,7 +199,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-9 {
   width: 100%;
   float: left;
@@ -222,7 +208,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-10 {
   width: 100%;
   float: left;
@@ -231,7 +217,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-11 {
   width: 100%;
   float: left;
@@ -240,7 +226,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   padding-right: 10px;
 }
 
-/* line 14, ../scss/patterns/_grid.scss */
+/* line 123, ../scss/patterns/_grid.scss */
 .grid-12 {
   width: 100%;
   float: left;
@@ -250,7 +236,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
 }
 
 @media (min-width: 30em) {
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-1 {
     width: 8.33333%;
     float: left;
@@ -259,7 +245,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-2 {
     width: 16.66667%;
     float: left;
@@ -268,7 +254,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-3 {
     width: 25%;
     float: left;
@@ -277,7 +263,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-4 {
     width: 33.33333%;
     float: left;
@@ -286,7 +272,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-5 {
     width: 41.66667%;
     float: left;
@@ -295,7 +281,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-6 {
     width: 50%;
     float: left;
@@ -304,7 +290,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-7 {
     width: 58.33333%;
     float: left;
@@ -313,7 +299,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-8 {
     width: 66.66667%;
     float: left;
@@ -322,7 +308,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-9 {
     width: 75%;
     float: left;
@@ -331,7 +317,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-10 {
     width: 83.33333%;
     float: left;
@@ -340,7 +326,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-11 {
     width: 91.66667%;
     float: left;
@@ -349,7 +335,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 26, ../scss/patterns/_grid.scss */
+  /* line 135, ../scss/patterns/_grid.scss */
   .bp2-grid-12 {
     width: 100%;
     float: left;
@@ -358,19 +344,19 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 29, ../scss/patterns/_grid.scss */
+  /* line 138, ../scss/patterns/_grid.scss */
   .row .row {
     margin-left: -10px;
     margin-right: -10px;
   }
 
-  /* line 30, ../scss/patterns/_grid.scss */
+  /* line 139, ../scss/patterns/_grid.scss */
   .last-col {
     float: right;
   }
 }
 @media (min-width: 42.5em) {
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-1 {
     width: 8.33333%;
     float: left;
@@ -379,7 +365,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-1 {
     width: 8.33333%;
     float: left;
@@ -388,17 +374,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-1 {
     left: 8.33333%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-1 {
     left: -8.33333%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-2 {
     width: 16.66667%;
     float: left;
@@ -407,7 +393,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-2 {
     width: 16.66667%;
     float: left;
@@ -416,17 +402,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-2 {
     left: 16.66667%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-2 {
     left: -16.66667%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-3 {
     width: 25%;
     float: left;
@@ -435,7 +421,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-3 {
     width: 25%;
     float: left;
@@ -444,17 +430,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-3 {
     left: 25%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-3 {
     left: -25%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-4 {
     width: 33.33333%;
     float: left;
@@ -463,7 +449,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-4 {
     width: 33.33333%;
     float: left;
@@ -472,17 +458,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-4 {
     left: 33.33333%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-4 {
     left: -33.33333%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-5 {
     width: 41.66667%;
     float: left;
@@ -491,7 +477,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-5 {
     width: 41.66667%;
     float: left;
@@ -500,17 +486,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-5 {
     left: 41.66667%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-5 {
     left: -41.66667%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-6 {
     width: 50%;
     float: left;
@@ -519,7 +505,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-6 {
     width: 50%;
     float: left;
@@ -528,17 +514,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-6 {
     left: 50%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-6 {
     left: -50%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-7 {
     width: 58.33333%;
     float: left;
@@ -547,7 +533,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-7 {
     width: 58.33333%;
     float: left;
@@ -556,17 +542,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-7 {
     left: 58.33333%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-7 {
     left: -58.33333%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-8 {
     width: 66.66667%;
     float: left;
@@ -575,7 +561,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-8 {
     width: 66.66667%;
     float: left;
@@ -584,17 +570,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-8 {
     left: 66.66667%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-8 {
     left: -66.66667%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-9 {
     width: 75%;
     float: left;
@@ -603,7 +589,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-9 {
     width: 75%;
     float: left;
@@ -612,17 +598,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-9 {
     left: 75%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-9 {
     left: -75%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-10 {
     width: 83.33333%;
     float: left;
@@ -631,7 +617,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-10 {
     width: 83.33333%;
     float: left;
@@ -640,17 +626,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-10 {
     left: 83.33333%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-10 {
     left: -83.33333%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-11 {
     width: 91.66667%;
     float: left;
@@ -659,7 +645,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-11 {
     width: 91.66667%;
     float: left;
@@ -668,17 +654,17 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-11 {
     left: 91.66667%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-11 {
     left: -91.66667%;
   }
 
-  /* line 39, ../scss/patterns/_grid.scss */
+  /* line 148, ../scss/patterns/_grid.scss */
   .grid-12 {
     width: 100%;
     float: left;
@@ -687,7 +673,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 40, ../scss/patterns/_grid.scss */
+  /* line 149, ../scss/patterns/_grid.scss */
   .bp3-grid-12 {
     width: 100%;
     float: left;
@@ -696,18 +682,18 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 41, ../scss/patterns/_grid.scss */
+  /* line 150, ../scss/patterns/_grid.scss */
   .push-left-12 {
     left: 100%;
   }
 
-  /* line 42, ../scss/patterns/_grid.scss */
+  /* line 151, ../scss/patterns/_grid.scss */
   .pull-left-12 {
     left: -100%;
   }
 }
 @media (min-width: 60em) {
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-1 {
     width: 8.33333%;
     float: left;
@@ -716,7 +702,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-2 {
     width: 16.66667%;
     float: left;
@@ -725,7 +711,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-3 {
     width: 25%;
     float: left;
@@ -734,7 +720,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-4 {
     width: 33.33333%;
     float: left;
@@ -743,7 +729,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-5 {
     width: 41.66667%;
     float: left;
@@ -752,7 +738,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-6 {
     width: 50%;
     float: left;
@@ -761,7 +747,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-7 {
     width: 58.33333%;
     float: left;
@@ -770,7 +756,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-8 {
     width: 66.66667%;
     float: left;
@@ -779,7 +765,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-9 {
     width: 75%;
     float: left;
@@ -788,7 +774,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-10 {
     width: 83.33333%;
     float: left;
@@ -797,7 +783,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-11 {
     width: 91.66667%;
     float: left;
@@ -806,7 +792,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 52, ../scss/patterns/_grid.scss */
+  /* line 161, ../scss/patterns/_grid.scss */
   .bp4-grid-12 {
     width: 100%;
     float: left;
@@ -816,7 +802,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   }
 }
 @media (min-width: 71.25em) {
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-1 {
     width: 8.33333%;
     float: left;
@@ -825,7 +811,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-2 {
     width: 16.66667%;
     float: left;
@@ -834,7 +820,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-3 {
     width: 25%;
     float: left;
@@ -843,7 +829,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-4 {
     width: 33.33333%;
     float: left;
@@ -852,7 +838,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-5 {
     width: 41.66667%;
     float: left;
@@ -861,7 +847,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-6 {
     width: 50%;
     float: left;
@@ -870,7 +856,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-7 {
     width: 58.33333%;
     float: left;
@@ -879,7 +865,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-8 {
     width: 66.66667%;
     float: left;
@@ -888,7 +874,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-9 {
     width: 75%;
     float: left;
@@ -897,7 +883,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-10 {
     width: 83.33333%;
     float: left;
@@ -906,7 +892,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-11 {
     width: 91.66667%;
     float: left;
@@ -915,7 +901,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 
-  /* line 62, ../scss/patterns/_grid.scss */
+  /* line 171, ../scss/patterns/_grid.scss */
   .bp5-grid-12 {
     width: 100%;
     float: left;
@@ -924,9 +910,39 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
     padding-right: 10px;
   }
 }
-/* line 3, ../scss/patterns/_buttons.scss */
-.btn,
-a.btn {
+/* line 1, ../scss/patterns/_buttons.scss */
+.btn {
+  border: 1px solid #b00626;
+  background-color: #b00626;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0);
+  color: #FFF;
+  width: auto;
+  margin-top: 0.625em;
+  margin-bottom: 0.625em;
+}
+/* line 74, ../scss/shared/_ui.scss */
+.btn:hover, .btn:focus {
+  border: 1px solid #dc0830;
+  background-color: #dc0830;
+  color: #FFF;
+}
+/* line 85, ../scss/shared/_ui.scss */
+.btn:focus {
+  text-decoration: underline;
+}
+/* line 89, ../scss/shared/_ui.scss */
+.btn:active {
+  background-color: #dc0830;
+  box-shadow: none;
+  color: #FFF;
+}
+/* line 99, ../scss/shared/_ui.scss */
+.btn:visited {
+  color: #FFF;
+}
+
+/* line 8, ../scss/patterns/_buttons.scss */
+.btn--small {
   padding-left: 0.3125em;
   padding-right: 0.3125em;
   font-size: 1em;
@@ -934,178 +950,11 @@ a.btn {
   padding-top: 0.4375em;
   padding-bottom: 0.4375em;
   height: 2.1875em;
-  border: 1px solid #0a69e7;
-  background-color: #0a69e7;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0);
-  color: #FFF;
-}
-/* line 74, ../scss/shared/_ui.scss */
-.btn:hover, .btn:focus,
-a.btn:hover,
-a.btn:focus {
-  border: 1px solid #2981f6;
-  background-color: #2981f6;
-  color: #FFF;
-}
-/* line 85, ../scss/shared/_ui.scss */
-.btn:focus,
-a.btn:focus {
-  text-decoration: underline;
-}
-/* line 89, ../scss/shared/_ui.scss */
-.btn:active,
-a.btn:active {
-  background-color: #2981f6;
-  box-shadow: none;
-  color: #FFF;
-}
-/* line 99, ../scss/shared/_ui.scss */
-.btn:visited,
-a.btn:visited {
-  color: #FFF;
 }
 
-/* line 10, ../scss/patterns/_buttons.scss */
-.btn-secondary,
-input.btn-secondary,
-input[type="submit"].btn-secondary,
-a.btn-secondary {
-  padding-left: 0.3125em;
-  padding-right: 0.3125em;
-  font-size: 1em;
-  line-height: 1.3125;
-  padding-top: 0.4375em;
-  padding-bottom: 0.4375em;
-  height: 2.1875em;
-  border: 1px solid #cccccc;
-  background-color: #cccccc;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0);
-  color: #000;
-}
-/* line 74, ../scss/shared/_ui.scss */
-.btn-secondary:hover, .btn-secondary:focus,
-input.btn-secondary:hover,
-input.btn-secondary:focus,
-input[type="submit"].btn-secondary:hover,
-input[type="submit"].btn-secondary:focus,
-a.btn-secondary:hover,
-a.btn-secondary:focus {
-  border: 1px solid #e3e3e3;
-  background-color: #e3e3e3;
-  color: #000;
-}
-/* line 85, ../scss/shared/_ui.scss */
-.btn-secondary:focus,
-input.btn-secondary:focus,
-input[type="submit"].btn-secondary:focus,
-a.btn-secondary:focus {
-  text-decoration: underline;
-}
-/* line 89, ../scss/shared/_ui.scss */
-.btn-secondary:active,
-input.btn-secondary:active,
-input[type="submit"].btn-secondary:active,
-a.btn-secondary:active {
-  background-color: #e3e3e3;
-  box-shadow: none;
-  color: #000;
-}
-/* line 99, ../scss/shared/_ui.scss */
-.btn-secondary:visited,
-input.btn-secondary:visited,
-input[type="submit"].btn-secondary:visited,
-a.btn-secondary:visited {
-  color: #000;
-}
-
-@media (min-width: 42.5em) {
-  /* line 25, ../scss/patterns/_buttons.scss */
-  .btn,
-  a.btn,
-  .btn-secondary,
-  input.btn-secondary,
-  input[type="submit"].btn-secondary,
-  a.btn-secondary {
-    padding-left: 0.46875em;
-    padding-right: 0.46875em;
-    font-size: 1em;
-    line-height: 1.3125;
-    padding-top: 0.875em;
-    padding-bottom: 0.875em;
-    height: 3.0625em;
-    display: inline-block;
-    width: auto;
-  }
-}
-@media (min-width: 71.25em) {
-  /* line 39, ../scss/patterns/_buttons.scss */
-  .btn,
-  a.btn,
-  .btn-secondary,
-  input.btn-secondary,
-  input[type="submit"].btn-secondary,
-  a.btn-secondary {
-    padding-left: 0.625em;
-    padding-right: 0.625em;
-    font-size: 1.414em;
-    line-height: 1.23762;
-    padding-top: 0.61881em;
-    padding-bottom: 0.61881em;
-    height: 2.47525em;
-  }
-}
-/* line 4, ../scss/patterns/_forms.scss */
-.error-area {
-  color: #d00c00;
-}
-/* line 7, ../scss/patterns/_forms.scss */
-.error-area input[type="input"],
-.error-area input[type="text"],
-.error-area input[type="email"],
-.error-area input[type="password"],
-.error-area input[type="search"],
-.error-area input[type="tel"],
-.error-area input[type="url"],
-.error-area input[type="number"],
-.error-area input[type="date"],
-.error-area input[type="month"],
-.error-area input[type="week"],
-.error-area input[type="time"],
-.error-area input[type="datetime"],
-.error-area input[type="datetime-local"],
-.error-area input[name="field_country_code"],
-.error-area input[name="field_city_code"],
-.error-area input[name="field_phone_int"],
-.error-area select[multiple],
-.error-area textarea {
-  border-color: #d00c00;
-}
-/* line 28, ../scss/patterns/_forms.scss */
-.error-area input[type="input"]:focus,
-.error-area input[type="text"]:focus,
-.error-area input[type="email"]:focus,
-.error-area input[type="password"]:focus,
-.error-area input[type="search"]:focus,
-.error-area input[type="tel"]:focus,
-.error-area input[type="url"]:focus,
-.error-area input[type="number"]:focus,
-.error-area input[type="date"]:focus,
-.error-area input[type="month"]:focus,
-.error-area input[type="week"]:focus,
-.error-area input[type="time"]:focus,
-.error-area input[type="datetime"]:focus,
-.error-area input[type="datetime-local"]:focus,
-.error-area input[name="field_country_code"]:focus,
-.error-area input[name="field_city_code"]:focus,
-.error-area input[name="field_phone_int"]:focus,
-.error-area select[multiple]:focus,
-.error-area textarea:focus {
-  border-color: #d00c00;
-}
-
-/* line 36, ../scss/patterns/_forms.scss */
-.error-help {
-  display: block;
+/* line 12, ../scss/patterns/_buttons.scss */
+.btn--right {
+  float: right;
 }
 
 /* line 3, ../scss/patterns/_alerts.scss */
@@ -1329,18 +1178,11 @@ pre {
 }
 
 /* line 48, ../scss/theme/_typography.scss */
-ul,
-ol,
-blockquote {
-  padding-left: 1em;
-}
-
-/* line 54, ../scss/theme/_typography.scss */
 blockquote {
   font-style: italic;
 }
 
-/* line 58, ../scss/theme/_typography.scss */
+/* line 52, ../scss/theme/_typography.scss */
 table {
   text-align: left;
   width: 100%;
@@ -1352,7 +1194,7 @@ table {
   margin-bottom: 3.42857em;
 }
 
-/* line 67, ../scss/theme/_typography.scss */
+/* line 61, ../scss/theme/_typography.scss */
 caption {
   font-family: sans-serif;
   text-align: left;
@@ -1363,39 +1205,39 @@ caption {
   margin-bottom: 0.75em;
 }
 
-/* line 77, ../scss/theme/_typography.scss */
+/* line 71, ../scss/theme/_typography.scss */
 td,
 th {
   padding: .25em 1em .25em 0;
   border-bottom: 1px solid #f7f7f7;
 }
 
-/* line 83, ../scss/theme/_typography.scss */
+/* line 77, ../scss/theme/_typography.scss */
 img {
   max-width: 100%;
 }
 
-/* line 91, ../scss/theme/_typography.scss */
+/* line 85, ../scss/theme/_typography.scss */
 a {
   text-decoration: none;
-  color: #0a69e7;
+  color: #b00626;
   transition: color .22s ease-in-out;
 }
-/* line 96, ../scss/theme/_typography.scss */
+/* line 90, ../scss/theme/_typography.scss */
 a:visited {
-  color: #095ecf;
+  color: #970521;
 }
-/* line 100, ../scss/theme/_typography.scss */
+/* line 94, ../scss/theme/_typography.scss */
 a:hover {
   text-decoration: underline;
-  color: #0853b6;
+  color: #7f041b;
 }
-/* line 105, ../scss/theme/_typography.scss */
+/* line 99, ../scss/theme/_typography.scss */
 a:focus {
   outline: thin dotted;
-  color: #0853b6;
+  color: #7f041b;
 }
-/* line 110, ../scss/theme/_typography.scss */
+/* line 104, ../scss/theme/_typography.scss */
 a:hover, a:active {
   outline: 0;
 }
@@ -1507,49 +1349,8 @@ textarea {
   font-style: italic;
 }
 
-/* line 84, ../scss/theme/_forms.scss */
-input[type="submit"],
-button {
-  padding-left: 0.3125em;
-  padding-right: 0.3125em;
-  font-size: 1em;
-  line-height: 1.3125;
-  padding-top: 0.4375em;
-  padding-bottom: 0.4375em;
-  height: 2.1875em;
-  border: 1px solid #0a69e7;
-  background-color: #0a69e7;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0);
-  color: #FFF;
-}
-/* line 74, ../scss/shared/_ui.scss */
-input[type="submit"]:hover, input[type="submit"]:focus,
-button:hover,
-button:focus {
-  border: 1px solid #2981f6;
-  background-color: #2981f6;
-  color: #FFF;
-}
-/* line 85, ../scss/shared/_ui.scss */
-input[type="submit"]:focus,
-button:focus {
-  text-decoration: underline;
-}
-/* line 89, ../scss/shared/_ui.scss */
-input[type="submit"]:active,
-button:active {
-  background-color: #2981f6;
-  box-shadow: none;
-  color: #FFF;
-}
-/* line 99, ../scss/shared/_ui.scss */
-input[type="submit"]:visited,
-button:visited {
-  color: #FFF;
-}
-
 @media (min-width: 42.5em) {
-  /* line 93, ../scss/theme/_forms.scss */
+  /* line 84, ../scss/theme/_forms.scss */
   input[type="input"],
   input[type="text"],
   input[type="email"],
@@ -1578,27 +1379,13 @@ button:visited {
     height: 3.0625em;
   }
 
-  /* line 115, ../scss/theme/_forms.scss */
+  /* line 106, ../scss/theme/_forms.scss */
   textarea {
     height: auto;
-  }
-
-  /* line 119, ../scss/theme/_forms.scss */
-  input[type="submit"],
-  button {
-    padding-left: 0.46875em;
-    padding-right: 0.46875em;
-    font-size: 1em;
-    line-height: 1.3125;
-    padding-top: 0.875em;
-    padding-bottom: 0.875em;
-    height: 3.0625em;
-    display: inline-block;
-    width: auto;
   }
 }
 @media (min-width: 71.25em) {
-  /* line 129, ../scss/theme/_forms.scss */
+  /* line 114, ../scss/theme/_forms.scss */
   input[type="input"],
   input[type="text"],
   input[type="email"],
@@ -1627,21 +1414,9 @@ button:visited {
     height: 2.47525em;
   }
 
-  /* line 151, ../scss/theme/_forms.scss */
+  /* line 136, ../scss/theme/_forms.scss */
   textarea {
     height: auto;
-  }
-
-  /* line 155, ../scss/theme/_forms.scss */
-  input[type="submit"],
-  button {
-    padding-left: 0.625em;
-    padding-right: 0.625em;
-    font-size: 1.414em;
-    line-height: 1.23762;
-    padding-top: 0.61881em;
-    padding-bottom: 0.61881em;
-    height: 2.47525em;
   }
 }
 /* line 5, ../scss/theme/modules/_frame.scss */
@@ -1699,7 +1474,7 @@ button:visited {
 /* line 49, ../scss/theme/modules/_frame.scss */
 .main-nav a:hover,
 .main-nav .selected a {
-  color: #0a69e7;
+  color: #b00626;
 }
 
 /* line 56, ../scss/theme/modules/_frame.scss */
@@ -1729,7 +1504,7 @@ button:visited {
 /* line 70, ../scss/theme/modules/_frame.scss */
 .svg .trigger-active,
 .trigger-active {
-  background-color: #0a69e7;
+  background-color: #b00626;
 }
 
 /* line 79, ../scss/theme/modules/_frame.scss */
@@ -1869,63 +1644,36 @@ button:visited {
     padding-right: 10px;
   }
 }
-/* line 5, ../scss/theme/modules/_home.scss */
-.intro-holder {
-  padding-top: 3em;
+/* line 1, ../scss/theme/modules/_home.scss */
+.board__frame {
+  border: 1px solid #b00626;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  padding-left: 0.625em;
+  padding-right: 0.625em;
 }
 
-/* line 9, ../scss/theme/modules/_home.scss */
-.intro {
-  width: 100%;
-  float: left;
-  position: relative;
-  padding-left: 10px;
-  padding-right: 10px;
+/* line 8, ../scss/theme/modules/_home.scss */
+.players {
+  margin-top: 0em;
+  margin-bottom: 1.875em;
 }
+
 /* line 12, ../scss/theme/modules/_home.scss */
-.intro h1 {
-  font-weight: 300;
-  font-size: 2.82715em;
-  line-height: 1.238;
-  padding-top: 0.15475em;
-  padding-bottom: 0.15475em;
-}
-/* line 17, ../scss/theme/modules/_home.scss */
-.intro p {
-  color: #777777;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1em;
-  line-height: 1.3125;
-  padding-top: 0.4375em;
-  padding-bottom: 1.3125em;
+.players-list {
+  list-style: none;
 }
 
-/* line 26, ../scss/theme/modules/_home.scss */
-.main-col-6 {
-  width: 100%;
+/* line 16, ../scss/theme/modules/_home.scss */
+.players-list li {
+  display: inline-block;
+  width: 25%;
   float: left;
   position: relative;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-@media (min-width: 42.5em) {
-  /* line 36, ../scss/theme/modules/_home.scss */
-  .intro-holder {
-    padding-top: 3em;
-  }
-}
-@media (min-width: 60em) {
-  /* line 44, ../scss/theme/modules/_home.scss */
-  .main-col-6 {
-    width: 50%;
-    float: left;
-    position: relative;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
 /* line 5, ../scss/theme/modules/_styleguide.scss */
 .main-content {
   width: 100%;

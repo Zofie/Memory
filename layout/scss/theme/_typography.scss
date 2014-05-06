@@ -45,12 +45,6 @@ pre {
 	@include baseline-dimensions(0,1,2,1);
 }
 
-ul,
-ol,
-blockquote {
-	padding-left: 1em;
-}
-
 blockquote {
 	font-style: italic;
 }

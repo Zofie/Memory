@@ -2,30 +2,31 @@ var Memory =
 {
 	init: function()
 	{
-		Memory.addTwoPlayers();
+		Memory.AddPlayers();
 		Memory.createRandomCards();
 		Memory.shuffleCards();
 		Memory.isMatch();
 		Memory.flipoverAnimation();
 	},
 
-	addTwoPlayers: function()
+	AddPlayers: function()
 	{
-		$('#play1').click(function(event) {
-			var player1 = $('#player1').val();
-			$( "h3#js-name1" ).text(player1);
+		$( ".js-player" ).submit(function(event) {
 
-			// Hide form after name was submitted
-			$(this).parent().hide();
-			event.preventDefault();
-		});
+			// Check length of player list
+			var playerList = $( ".players-list li" ).length;
+			var scoreBoard = "<div>scoreboard shizzle comes here</div>";
 
-		$('#play2').click(function(event) {
-			var player2 = $('#player2').val();
-			$( "h3#js-name2" ).text(player2);
+			// Read value of entered name
+			var player = $('.player-name').val();
 
-			// Hide form after name was submitted
-			$(this).parent().hide();
+			if ( playerList === 3 ) {
+				// When playerList reached 4 players hide form
+				$("ul").append("<li>" + player + scoreBoard+ "</li>");
+				$('.js-player').hide();
+			} else {
+				$("ul").append("<li>" + player + scoreBoard+ "</li>");
+			}
 			event.preventDefault();
 		});
 	},
@@ -49,6 +50,16 @@ var Memory =
 	{
 
 	}
+};
+
+var Cards =
+{
+
+};
+
+var Scoreboard =
+{
+
 };
 
 Memory.init();

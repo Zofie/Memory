@@ -79,15 +79,6 @@ textarea {
 	font-style: italic;
 }
 
-// Buttons
-
-input[type="submit"],
-button {
-	@extend %btn;
-	@include btn-s;
-	@include btn-color;
-}
-
 @media (min-width: $bp3) {
 
 	input[type="input"],
@@ -114,12 +105,6 @@ button {
 
 	textarea {
 		height: auto;
-	}
-
-	input[type="submit"],
-	button {
-		@include btn-m;
-		@include btn-inlineblock;
 	}
 
 }
@@ -150,11 +135,6 @@ button {
 
 	textarea {
 		height: auto;
-	}
-
-	input[type="submit"],
-	button {
-		@include btn-l;
 	}
 
 }
