@@ -19,14 +19,15 @@ var Memory =
 
 			// Read value of entered name
 			var player = $('.player-name').val();
+			
+			// Add player name + scoreBoard
+			$("ul").append("<li>" + player + scoreBoard+ "</li>");
 
-			if ( playerList === 3 ) {
-				// When playerList reached 4 players hide form
-				$("ul").append("<li>" + player + scoreBoard+ "</li>");
+			// Hide inputfield when max players has reached
+			if ( playerList === 3 ) {	
 				$('.js-player').hide();
-			} else {
-				$("ul").append("<li>" + player + scoreBoard+ "</li>");
 			}
+
 			event.preventDefault();
 		});
 	},
