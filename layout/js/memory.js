@@ -24,7 +24,7 @@ var Memory =
 			$("ul").append("<li>" + player + scoreBoard+ "</li>");
 
 			// Hide inputfield when max players has reached
-			if ( playerList === 3 ) {	
+			if ( playerList === 3 ) {
 				$('.js-player').hide();
 			}
 
@@ -53,14 +53,14 @@ var Memory =
 	}
 };
 
-var Cards =
-{
+// var Cards =
+// {
 
-};
+// };
 
-var Scoreboard =
-{
+// var Scoreboard =
+// {
 
-};
+// };
 
 Memory.init();
