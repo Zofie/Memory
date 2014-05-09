@@ -57,14 +57,14 @@ var Memory =
 	}
 };
 
-var Cards =
-{
+// var Cards =
+// {
 
-};
+// };
 
-var Scoreboard =
-{
+// var Scoreboard =
+// {
 
-};
+// };
 
 Memory.init();
