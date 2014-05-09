@@ -1,70 +1,34 @@
-var Memory =
-{
-	// variabelen in object
-	// naam van spelers opslaan in object
+var s,
+Memory = {
 
-	init: function()
-	{
-		Memory.AddPlayers();
-		Memory.createRandomCards();
-		Memory.shuffleCards();
-		Memory.isMatch();
-		Memory.flipoverAnimation();
-	},
+  settings: {
+	maxPlayers: 4,
+	addPlayer: $( ".js-player" ),
+	playerName: $('.player-name'),
+	scoreBoard: "<div>scoreboard shizzle comes here</div>",
+	playNow: $('.play-now'),
+  },
 
-	AddPlayers: function()
-	{
-		$( ".js-player" ).submit(function(event) {
+  init: function() {
+	s = this.settings;
+	this.AddPlayers();
+  },
 
-			// Check length of player list
-			var playerList = $( ".players-list li" ).length;
-			var scoreBoard = "<div>scoreboard shizzle comes here</div>";
+  AddPlayers: function() {
+	s.addPlayer.submit(function(event) {
+		$("ul").append("<li>" + s.playerName.val() + s.scoreBoard+ "</li>");
+		if ($( ".players-list li").length === 4) {
+			s.addPlayer.hide();
+		};
+		event.preventDefault();
+	});
+},
 
-			// Read value of entered name
-			var player = $('.player-name').val();
-
-			// Add player name + scoreBoard
-			// @todo: nog vereenvouding - geen html in js (op einde)
-			$("ul").append("<li>" + player + scoreBoard+ "</li>");
-
-			// Hide inputfield when max players has reached
-			if ( playerList === 3 ) {
-				$('.js-player').hide();
-			}
-
-			event.preventDefault();
-		});
-	},
-
-	createRandomCards: function()
-	{
-
-	},
-
-	shuffleCards: function()
-	{
-
-	},
-
-	isMatch: function()
-	{
-
-	},
-
-	flipoverAnimation: function()
-	{
-
-	}
+// @todo create cards
+// @todo hide content cards
+// @todo shuffle cards
+// @todo is match when 2 clicked
+// @todo flipoverAnimation
 };
-
-// var Cards =
-// {
-
-// };
-
-// var Scoreboard =
-// {
-
-// };
 
 Memory.init();
