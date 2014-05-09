@@ -17,9 +17,17 @@ Memory = {
   AddPlayers: function() {
 	s.addPlayer.submit(function(event) {
 		$("ul").append("<li>" + s.playerName.val() + s.scoreBoard+ "</li>");
-		if ($( ".players-list li").length === 4) {
+
+		var ListLength =  $( ".players-list li").length;
+		switch(true) {
+			case ListLength === 2:
+			$("input").removeClass('is-hidden');
+			break;
+
+			case ListLength === 4:
 			s.addPlayer.hide();
-		};
+			break;
+		}
 		event.preventDefault();
 	});
 },
