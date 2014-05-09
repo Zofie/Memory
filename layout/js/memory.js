@@ -1,5 +1,8 @@
 var Memory =
 {
+	// variabelen in object
+	// naam van spelers opslaan in object
+
 	init: function()
 	{
 		Memory.AddPlayers();
@@ -19,12 +22,13 @@ var Memory =
 
 			// Read value of entered name
 			var player = $('.player-name').val();
-			
+
 			// Add player name + scoreBoard
+			// @todo: nog vereenvouding - geen html in js (op einde)
 			$("ul").append("<li>" + player + scoreBoard+ "</li>");
 
 			// Hide inputfield when max players has reached
-			if ( playerList === 3 ) {	
+			if ( playerList === 3 ) {
 				$('.js-player').hide();
 			}
 
