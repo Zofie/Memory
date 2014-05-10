@@ -3,10 +3,11 @@ Memory = {
 
   settings: {
 	maxPlayers: 4,
-	addPlayer: $( ".js-player" ),
-	playerName: $('.player-name'),
+	addPlayer: $( ".js-player" ), // add player button 
+	playerName: $('.player-name'), // name invidual player
 	scoreBoard: "<div>scoreboard shizzle comes here</div>",
-	playNow: $('.play-now'),
+	playNow: $('.play-now'), // play now button
+	playersList: [] // array with all names of players
   },
 
   init: function() {
@@ -21,13 +22,17 @@ Memory = {
 		var ListLength =  $( ".players-list li").length;
 		switch(true) {
 			case ListLength === 2:
+			// Show "play now" button
 			$("input").removeClass('is-hidden');
 			break;
 
-			case ListLength === 4:
+			case ListLength === s.maxPlayers:
+			// Hide form to add players when max is reached
 			s.addPlayer.hide();
 			break;
 		}
+		s.playersList.push(s.playerName.val());
+
 		event.preventDefault();
 	});
 },
