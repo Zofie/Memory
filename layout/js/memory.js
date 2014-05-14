@@ -1,34 +1,37 @@
-var s,
 Memory = {
 
   settings: {
-	maxPlayers: 4,
-	addPlayer: $( ".js-player" ),
+	maxPlayers: 4
+  },
+
+  elements: {
+	addPlayer: $( ".js-add-player" ),
 	playerName: $('.player-name'),
 	scoreBoard: "<div>scoreboard shizzle comes here</div>",
-	playNow: $('.play-now'),
+	playNow: $('.play-now')
   },
 
   init: function() {
-	s = this.settings;
+	settings = this.settings;
+	elements = this.elements;
 	this.AddPlayers();
   },
 
   AddPlayers: function() {
-	s.addPlayer.submit(function(event) {
-		$("ul").append("<li>" + s.playerName.val() + s.scoreBoard+ "</li>");
+	elements.addPlayer.submit(function(event) {
+		event.preventDefault();
+		$("ul").append("<li>" + elements.playerName.val() + elements.scoreBoard+ "</li>");
 
-		var ListLength =  $( ".players-list li").length;
+		var listLength =  $( ".players-list li").length;
 		switch(true) {
-			case ListLength === 2:
+			case listLength === 2:
 			$("input").removeClass('is-hidden');
 			break;
 
-			case ListLength === 4:
-			s.addPlayer.hide();
+			case listLength === settings.maxPlayers:
+			elements.addPlayer.hide();
 			break;
 		}
-		event.preventDefault();
 	});
 },
 
