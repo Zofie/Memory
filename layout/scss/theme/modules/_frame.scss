@@ -1,3 +1,9 @@
 .is-hidden {
 	display: none;
 }
+
+.grid-2 {
+	@include em-margin-tb(0,2);
+	height: 150px;
+	overflow: hidden;
+}

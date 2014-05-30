@@ -8,7 +8,7 @@
 .pagination, .pagination-centered, .board__frame {
   *zoom: 1;
 }
-/* line 12, ../scss/shared/_mixins.scss */
+/* line 11, ../scss/shared/_mixins.scss */
 .pagination:before, .pagination-centered:before, .board__frame:before, .pagination:after, .pagination-centered:after, .board__frame:after {
   display: table;
   content: "";
@@ -46,7 +46,7 @@
   -webkit-appearance: none;
   -webkit-font-smoothing: antialiased;
 }
-/* line 26, ../scss/shared/_ui.scss */
+/* line 25, ../scss/shared/_ui.scss */
 .btn:hover, .btn:visited {
   text-decoration: none;
 }
@@ -59,7 +59,7 @@
   position: relative;
   padding: 0.875em 1.3125em;
 }
-/* line 165, ../scss/shared/_ui.scss */
+/* line 163, ../scss/shared/_ui.scss */
 .alert-box a:hover,
 .alert-box a:active,
 .alert-box a:focus {
@@ -100,7 +100,7 @@
   float: left;
   zoom: 1;
 }
-/* line 245, ../scss/shared/_ui.scss */
+/* line 244, ../scss/shared/_ui.scss */
 .pagination a, .pagination-centered a,
 .pagination span,
 .pagination-centered span {
@@ -920,7 +920,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   margin-top: 0.625em;
   margin-bottom: 0.625em;
 }
-/* line 75, ../scss/shared/_ui.scss */
+/* line 74, ../scss/shared/_ui.scss */
 .btn:hover, .btn:focus {
   border: 1px solid #dc0830;
   background-color: #dc0830;
@@ -1004,7 +1004,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   color: #000;
 }
 
-/* line 6, ../scss/patterns/_pagination.scss */
+/* line 5, ../scss/patterns/_pagination.scss */
 .pagination a,
 .pagination span {
   padding: 0 10px;
@@ -1016,7 +1016,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   color: #777777;
 }
 
-/* line 22, ../scss/patterns/_pagination.scss */
+/* line 21, ../scss/patterns/_pagination.scss */
 .pagination-centered a,
 .pagination-centered span {
   padding: 0 10px;
@@ -1115,7 +1115,7 @@ img {
   border: 0;
 }
 
-/* line 12, ../scss/theme/_typography.scss */
+/* line 7, ../scss/theme/_typography.scss */
 h1,
 h2,
 h3,
@@ -1152,7 +1152,7 @@ h3 {
   padding-bottom: 0.30941em;
 }
 
-/* line 33, ../scss/theme/_typography.scss */
+/* line 31, ../scss/theme/_typography.scss */
 h4,
 h5,
 h6 {
@@ -1163,7 +1163,7 @@ h6 {
   padding-bottom: 0.4375em;
 }
 
-/* line 44, ../scss/theme/_typography.scss */
+/* line 38, ../scss/theme/_typography.scss */
 p,
 ol,
 ul,
@@ -1205,7 +1205,7 @@ caption {
   margin-bottom: 0.75em;
 }
 
-/* line 72, ../scss/theme/_typography.scss */
+/* line 71, ../scss/theme/_typography.scss */
 td,
 th {
   padding: .25em 1em .25em 0;
@@ -1237,7 +1237,7 @@ a:focus {
   outline: thin dotted;
   color: #7f041b;
 }
-/* line 105, ../scss/theme/_typography.scss */
+/* line 104, ../scss/theme/_typography.scss */
 a:hover, a:active {
   outline: 0;
 }
@@ -1247,7 +1247,7 @@ form {
   padding: 0 0 0.875em;
 }
 
-/* line 12, ../scss/theme/_forms.scss */
+/* line 11, ../scss/theme/_forms.scss */
 legend,
 label {
   display: block;
@@ -1259,7 +1259,7 @@ label {
   padding-bottom: 0.4375em;
 }
 
-/* line 39, ../scss/theme/_forms.scss */
+/* line 21, ../scss/theme/_forms.scss */
 input[type="input"],
 input[type="text"],
 input[type="email"],
@@ -1350,7 +1350,7 @@ textarea {
 }
 
 @media (min-width: 42.5em) {
-  /* line 102, ../scss/theme/_forms.scss */
+  /* line 84, ../scss/theme/_forms.scss */
   input[type="input"],
   input[type="text"],
   input[type="email"],
@@ -1385,7 +1385,7 @@ textarea {
   }
 }
 @media (min-width: 71.25em) {
-  /* line 132, ../scss/theme/_forms.scss */
+  /* line 114, ../scss/theme/_forms.scss */
   input[type="input"],
   input[type="text"],
   input[type="email"],
@@ -1422,6 +1422,14 @@ textarea {
 /* line 1, ../scss/theme/modules/_frame.scss */
 .is-hidden {
   display: none;
+}
+
+/* line 5, ../scss/theme/modules/_frame.scss */
+.grid-2 {
+  margin-top: 0em;
+  margin-bottom: 1.25em;
+  height: 150px;
+  overflow: hidden;
 }
 
 /* line 1, ../scss/theme/modules/_home.scss */
@@ -1618,8 +1626,7 @@ textarea {
 
   @page {
     margin: 0.5cm;
-}
-
+  }
   /* line 18, ../scss/theme/_print.scss */
   h2, h3 {
     orphans: 3;
@@ -1654,7 +1661,7 @@ textarea {
     content: " (" attr(href) ")";
   }
 
-  /* line 47, ../scss/theme/_print.scss */
+  /* line 46, ../scss/theme/_print.scss */
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";

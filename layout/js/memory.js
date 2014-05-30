@@ -49,10 +49,10 @@ Memory = {
 
 		for ( var i = 1; i <= numVariations; i++){
 			var cardOne = $(elements.card);
-			cardOne.html(i);
+			cardOne.append('<img src="layout/img/'+ i +'.jpg" alt="">');
 
 			var cardTwo = $(elements.card);
-			cardTwo.html(i);
+			cardTwo.append('<img src="layout/img/'+ i +'.jpg" alt="">');
 
 
 			elements.board.append(cardOne);
