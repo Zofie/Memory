@@ -25,7 +25,6 @@ Memory = {
 		this.AddPlayers();
 		this.createBoard();
 		this.chooseTwoCards();
-		this.shuffleCards();
 	},
 
 	AddPlayers: function() {
@@ -47,22 +46,6 @@ Memory = {
 	},
 
 	createBoard: function() {
-		// var numVariations = settings.cardsAmount / 2;
-
-		// for ( var i = 1; i <= numVariations; i++){
-		// 	var cardOne = $(elements.card);
-		// 	cardOne.append('<img src="layout/img/'+ i +'.jpg" id="' + i + '"  alt="">');
-
-		// 	var cardTwo = $(elements.card);
-		// 	cardTwo.append('<img src="layout/img/'+ i +'.jpg" id="' + i + '"  alt="">');
-
-
-		// 	elements.board.append(cardOne);
-		// 	elements.board.append(cardTwo);
-
-		// 	Memory.cards[i] = cardOne;
-		// 	Memory.cards[i] = cardTwo;
-		// }
 		var cards = [];
 		var diffCards = settings.cardsAmount / 2 + 1;
 
