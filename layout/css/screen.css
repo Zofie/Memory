@@ -1425,11 +1425,32 @@ textarea {
 }
 
 /* line 5, ../scss/theme/modules/_frame.scss */
-.grid-2 {
+.board__card {
+  width: 12.5%;
+  float: left;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 20px;
   margin-top: 0em;
   margin-bottom: 1.25em;
-  height: 150px;
-  overflow: hidden;
+}
+
+/* line 10, ../scss/theme/modules/_frame.scss */
+footer {
+  background-color: #b00626;
+  color: white;
+}
+/* line 13, ../scss/theme/modules/_frame.scss */
+footer a, footer a:visited {
+  color: #bfbfbf;
+}
+/* line 16, ../scss/theme/modules/_frame.scss */
+footer div {
+  width: 50%;
+  float: left;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 /* line 1, ../scss/theme/modules/_home.scss */

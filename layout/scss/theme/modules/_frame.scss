@@ -2,8 +2,18 @@
 	display: none;
 }
 
-.grid-2 {
+.board__card {
+	@include box-(1.5,0,2);
 	@include em-margin-tb(0,2);
-	height: 150px;
-	overflow: hidden;
+}
+
+footer {
+	background-color: $alpha-ui-color;
+	color: white;
+	a, a:visited {
+		color: darken(white, 25)
+	}
+	div {
+		@include box-(6,0,0)
+	}
 }

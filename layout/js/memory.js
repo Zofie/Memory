@@ -11,7 +11,7 @@ Memory = {
 		playerName: $('.player-name'),
 		scoreBoard: '<div>scoreboard shizzle comes here</div>',
 		playNow: $('.play-now'),
-		card: '<div class=\'grid-2\'></div>'
+		card: '<div class=\'board__card\'></div>'
 	},
 
 	// @todo push players to object
@@ -24,6 +24,8 @@ Memory = {
 		elements = this.elements;
 		this.AddPlayers();
 		this.createBoard();
+		this.chooseTwoCards();
+		this.shuffleCards();
 	},
 
 	AddPlayers: function() {
@@ -45,23 +47,53 @@ Memory = {
 	},
 
 	createBoard: function() {
-		var numVariations = settings.cardsAmount / 2;
+		// var numVariations = settings.cardsAmount / 2;
 
-		for ( var i = 1; i <= numVariations; i++){
-			var cardOne = $(elements.card);
-			cardOne.append('<img src="layout/img/'+ i +'.jpg" alt="">');
+		// for ( var i = 1; i <= numVariations; i++){
+		// 	var cardOne = $(elements.card);
+		// 	cardOne.append('<img src="layout/img/'+ i +'.jpg" id="' + i + '"  alt="">');
 
-			var cardTwo = $(elements.card);
-			cardTwo.append('<img src="layout/img/'+ i +'.jpg" alt="">');
+		// 	var cardTwo = $(elements.card);
+		// 	cardTwo.append('<img src="layout/img/'+ i +'.jpg" id="' + i + '"  alt="">');
 
 
-			elements.board.append(cardOne);
-			elements.board.append(cardTwo);
+		// 	elements.board.append(cardOne);
+		// 	elements.board.append(cardTwo);
 
-			Memory.cards[i] = cardOne;
-			Memory.cards[i] = cardTwo;
-		}
+		// 	Memory.cards[i] = cardOne;
+		// 	Memory.cards[i] = cardTwo;
+		// }
+		var cards = [];
+		var diffCards = settings.cardsAmount / 2 + 1;
 
+		// push to array
+		for (var i = 1; i < diffCards ; i ++) {
+			cards.push(i);
+			cards.push(i);
+		};
+
+		function shuffle(o){
+		    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+		    return o;
+		};
+
+		cards = shuffle(cards);
+
+		// loop over array
+		jQuery.each( cards, function( card, id ) {
+			$('#board').append('<div class="board__card"><img src="layout/img/'+id+'.jpg" id="'+id+'" /></div>')
+		});
+	},
+
+	chooseTwoCards: function() {
+		var numClicks = 0;
+		$('#board .board__card img').click(function(){
+			for (i = 1; i < 2; i++) {
+				clicked = $(this).attr('id');
+				console.log(clicked);
+			}
+			numClicks +=1
+		});
 	}
 };
 
