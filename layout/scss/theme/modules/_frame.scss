@@ -1,9 +1,15 @@
 .is-hidden {
-	display: none;
+	opacity: 0;
 }
 
 .board__card {
-	@include box-(1.5,0,2);
+	@include box-(1.5,1,1);
+	@include em-padding-tb(1,1);
+	border: 1px solid #ccc;
+	background-color: #eee
+}
+
+#board {
 	@include em-margin-tb(0,2);
 }
 
@@ -14,6 +20,6 @@ footer {
 		color: darken(white, 25)
 	}
 	div {
-		@include box-(6,0,0)
+		@include box-(6,0,0);
 	}
 }

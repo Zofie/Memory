@@ -15,9 +15,9 @@ Memory = {
 	},
 
 	// @todo push players to object
-	players: new Object(),
+	// players: new Object(),
 
-	cards: new Object(),
+	// cards: new Object(),
 
 	init: function() {
 		settings = this.settings;
@@ -53,29 +53,56 @@ Memory = {
 		for (var i = 1; i < diffCards ; i ++) {
 			cards.push(i);
 			cards.push(i);
-		};
+		}
 
 		function shuffle(o){
 		    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 		    return o;
-		};
+		}
 
 		cards = shuffle(cards);
 
 		// loop over array
 		jQuery.each( cards, function( card, id ) {
-			$('#board').append('<div class="board__card"><img src="layout/img/'+id+'.jpg" id="'+id+'" /></div>')
+			$('#board').append('<div class="board__card"><img src="layout/img/'+id+'.jpg" class="is-hidden" id="'+id+'" /></div>');
 		});
 	},
 
 	chooseTwoCards: function() {
-		var numClicks = 0;
+		var numClicks = 1;
+		var sameCards = [];
+		var sameCardsID = [];
 		$('#board .board__card img').click(function(){
 			for (i = 1; i < 2; i++) {
-				clicked = $(this).attr('id');
-				console.log(clicked);
+				if (numClicks <= 2) {
+					// ad class to clicked images
+					$(this).addClass('clicked').removeClass('is-hidden');
+					if (numClicks === 1 ) {
+						sameCards.push($(this));
+						sameCardsID.push($(this).attr('id'));
+					} else if (numClicks === 2) {
+						var card2 = $(this);
+						sameCards.push($(this));
+						sameCardsID.push($(this).attr('id'));
+						if (sameCardsID[0] === sameCardsID[1]){
+							$('#board .board__card img').removeClass('clicked');
+							alert('same');
+							numClicks = 0;
+						} else {
+						 	$('#board .board__card img').removeClass('clicked');
+						 	alert('not the same');
+						 	numClicks = 0;
+						 	$(sameCards[0]).addClass('is-hidden');
+						 	$(sameCards[1]).addClass('is-hidden');
+						}
+							sameCards.splice(0,2);
+							sameCardsID.splice(0,2);
+							console.log(sameCardsID);
+							console.log(sameCards);
+					}
+				}
+				numClicks +=1;
 			}
-			numClicks +=1
 		});
 	}
 };

@@ -1421,7 +1421,7 @@ textarea {
 }
 /* line 1, ../scss/theme/modules/_frame.scss */
 .is-hidden {
-  display: none;
+  opacity: 0;
 }
 
 /* line 5, ../scss/theme/modules/_frame.scss */
@@ -1429,22 +1429,30 @@ textarea {
   width: 12.5%;
   float: left;
   position: relative;
-  padding-left: 0px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  border: 1px solid #ccc;
+  background-color: #eeeeee;
+}
+
+/* line 12, ../scss/theme/modules/_frame.scss */
+#board {
   margin-top: 0em;
   margin-bottom: 1.25em;
 }
 
-/* line 10, ../scss/theme/modules/_frame.scss */
+/* line 16, ../scss/theme/modules/_frame.scss */
 footer {
   background-color: #b00626;
   color: white;
 }
-/* line 13, ../scss/theme/modules/_frame.scss */
+/* line 19, ../scss/theme/modules/_frame.scss */
 footer a, footer a:visited {
   color: #bfbfbf;
 }
-/* line 16, ../scss/theme/modules/_frame.scss */
+/* line 22, ../scss/theme/modules/_frame.scss */
 footer div {
   width: 50%;
   float: left;
