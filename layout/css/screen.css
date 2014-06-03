@@ -1434,25 +1434,26 @@ textarea {
   padding-top: 0.625em;
   padding-bottom: 0.625em;
   border: 1px solid #ccc;
-  background-color: #eeeeee;
+  background-color: #eee;
+  cursor: pointer;
 }
 
-/* line 12, ../scss/theme/modules/_frame.scss */
+/* line 13, ../scss/theme/modules/_frame.scss */
 #board {
   margin-top: 0em;
   margin-bottom: 1.25em;
 }
 
-/* line 16, ../scss/theme/modules/_frame.scss */
+/* line 17, ../scss/theme/modules/_frame.scss */
 footer {
   background-color: #b00626;
   color: white;
 }
-/* line 19, ../scss/theme/modules/_frame.scss */
+/* line 20, ../scss/theme/modules/_frame.scss */
 footer a, footer a:visited {
   color: #bfbfbf;
 }
-/* line 22, ../scss/theme/modules/_frame.scss */
+/* line 23, ../scss/theme/modules/_frame.scss */
 footer div {
   width: 50%;
   float: left;
