@@ -3,11 +3,15 @@
 }
 
 .board__card {
-	@include box-(1.5,1,1);
+	@include box-(3,1,1);
 	@include em-padding-tb(1,1);
 	border: 1px solid #ccc;
 	background-color: #eee;
-	cursor: pointer
+	cursor: pointer;
+
+	@include mq($bp3){
+		@include box-(1.5,1,1);
+	}
 }
 
 #board {

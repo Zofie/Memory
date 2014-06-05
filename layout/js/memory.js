@@ -14,11 +14,6 @@ Memory = {
 		card: '<div class=\'board__card\'></div>'
 	},
 
-	// @todo push players to object
-	// players: new Object(),
-
-	// cards: new Object(),
-
 	init: function() {
 		settings = this.settings;
 		elements = this.elements;
@@ -28,6 +23,13 @@ Memory = {
 	},
 
 	AddPlayers: function() {
+
+		// function Player() {
+		// 	this.name;
+		// }
+
+		// var p1 = new Player();
+
 		elements.addPlayer.submit(function(event) {
 			event.preventDefault();
 			$('ul').append('<li>' + elements.playerName.val() + elements.scoreBoard+ '</li>');
@@ -97,8 +99,6 @@ Memory = {
 						}
 							sameCards.splice(0,2);
 							sameCardsID.splice(0,2);
-							console.log(sameCardsID);
-							console.log(sameCards);
 					}
 				}
 				numClicks +=1;
@@ -107,6 +107,8 @@ Memory = {
 	}
 };
 
+//
+// @todo check when card is already clicked
 // @todo form validation
 // @todo create cards
 // @todo hide content cards
