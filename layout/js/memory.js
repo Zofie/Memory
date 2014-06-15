@@ -26,12 +26,6 @@ Memory = {
 
 	addPlayers: function() {
 
-		// function Player() {
-		// 	this.name;
-		// }
-
-		// var p1 = new Player();
-
 		elements.addPlayer.submit(function(event) {
 			event.preventDefault();
 			$('ul').append('<li>' + elements.playerName.val() + elements.scoreBoard+ '</li>');
@@ -88,6 +82,28 @@ Memory = {
 		var sameCards = [];
 		var sameCardsID = [];
 
+    function emptyArray(){
+      // empty array with chosen images html
+      sameCards.splice(0,2);
+      // empty array with chosen images id
+      sameCardsID.splice(0,2);
+    };
+
+    function clearClickedCards(){
+      // remove the clicked class to reset this turn
+      $('#board .board__card img').removeClass('clicked');
+    }
+
+    function hideWronglyClickedCards(){
+      // Hidde wrongly chosen images again because they were not equal
+      $(sameCards[0]).addClass('is-hidden');
+      $(sameCards[1]).addClass('is-hidden');
+    }
+
+    function messageAfterTurn(message){
+      alert(message);
+    }
+
 		$('#board .board__card img').click(function(){
 			// if (numClicks <= 2) {
 				// ad class "clicked" to chosen image.
@@ -107,32 +123,21 @@ Memory = {
 					sameCardsID.push($(this).attr('id'));
 
 					if (sameCardsID[0] === sameCardsID[1]){
-						alert('You\'ve chosen the same cards');
+            messageAfterTurn('You\'ve chosen the same cards');
 						// remove the clicked class to reset this turn
-						$('#board .board__card img').removeClass('clicked');
+						clearClickedCards()
 						// reset number of clicks
 						numClicks = 0;
 					} else {
-					 	alert('Too bad!');
-					 	// remove the clicked class to reset this turn
-					 	$('#board .board__card img').removeClass('clicked');
-
+					 	messageAfterTurn('Too bad');
+            clearClickedCards()
+            hideWronglyClickedCards()
 					 	// reset number of clicks
 					 	numClicks = 0;
-
-					 	// Hidde wrongly chosen images again because they were not equal
-					 	$(sameCards[0]).addClass('is-hidden');
-					 	$(sameCards[1]).addClass('is-hidden');
-					}
-
-					// empty array with chosen images html
-					// @todo: je kan dit her-initialiseren door sameCards =[]
-					sameCards.splice(0,2);
-					// empty array with chosen images id
-					sameCardsID.splice(0,2);
+					};
+          emptyArray();
 				}
 			// }
-
 			// Count clicks
 			numClicks++;
 		});
