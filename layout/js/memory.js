@@ -91,7 +91,7 @@ Memory = {
 
       function clearClickedCards(){
         // remove the clicked class to reset this turn
-        $('#board .board__card img').removeClass('clicked');
+        $('img').removeClass('clicked');
       }
 
       function hideWronglyClickedCards(){
@@ -103,11 +103,16 @@ Memory = {
       function messageAfterTurn(message){
         alert(message);
       }
-
-    $('#board .board__card img').click(function(){
-      // if (numClicks <= 2) {
+    $('img').click(function(){
+      // first check if card is already clicked or not
+      // If so show message that player needs to choose an other card
+      // If not continue playing
+      if ($(this).hasClass('clicked')) {
+        messageAfterTurn('Choose different card');
+      } else {
+        // if (numClicks <= 2) {
         // ad class "clicked" to chosen image.
-        $(this).addClass('clicked').removeClass('is-hidden');
+        $(this).toggleClass('clicked').toggleClass('is-hidden');
         if (numClicks === 1 ) {
           // Push the html of the chosen img to the array sameCards
           sameCards.push($(this));
@@ -140,6 +145,7 @@ Memory = {
       // }
       // Count clicks
       numClicks++;
+      }
     });
   }
 };
