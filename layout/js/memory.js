@@ -2,7 +2,7 @@ Memory = {
 
   settings: {
     maxPlayers: 4,
-    cardsAmount: 24
+    cardsAmount: 10
   },
 
   elements: {
