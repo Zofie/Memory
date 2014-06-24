@@ -43,6 +43,12 @@ Memory = {
     });
   },
 
+  // we wan't our cards in a random order so we'll shuffle them
+  shuffleCards: function(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+  },
+
   createBoard: function() {
     // this is the array that will hold all the cards
     var cards = [];
@@ -54,20 +60,8 @@ Memory = {
       cards.push(i);
       cards.push(i);
     }
-
-    //    var arr = [1,2,3,4,5,6];
-    // arr.sort(function() {
-    //    return Math.random() - 0.5;
-    // });
-    // @todo: beter niet functions in functions steken maar alles op zelfde niveau. Je kan ook een apart js hebben met daarin
-    // allemaal algemene functies
-    function shuffle(o){
-        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-        return o;
-    }
-
-    // we wan't our cards in a random order so we'll shuffle them
-    cards = shuffle(cards);
+    
+    cards = this.shuffleCards(cards);
 
     // loop over array
     // @todo: probeer geen html in de javascript te steken, maar dit in html steken en deze dan telkens clonen
