@@ -92,23 +92,10 @@ Memory = {
         // Hidde wrongly chosen images again because they were not equal
         $(sameCards[0]).addClass('is-hidden');
         $(sameCards[1]).addClass('is-hidden');
-        console.log('clicked hideWronglyClickedCards');
       }
 
       function messageAfterTurn(message){
-        // alert(message);
-        $('.message-box').append(message)
-      }
-
-      function messageBox(){
-        //if true hidewronglyclickedcards
-        //if false don't hidewronglyclickedcards
-        //
-        $('.message-box').on('click', function(){
-          clearClickedCards();
-          hideWronglyClickedCards();
-          emptyArray();
-        });
+        alert(message);
       }
     $('img').click(function(){
       // first check if card is already clicked or not
@@ -142,10 +129,12 @@ Memory = {
             numClicks = 0;
           } else {
             messageAfterTurn('Too bad');
-            messageBox()
+            clearClickedCards()
+            hideWronglyClickedCards()
             // reset number of clicks
             numClicks = 0;
-          }
+          };
+          emptyArray();
         }
       // }
       // Count clicks
@@ -155,19 +144,11 @@ Memory = {
   }
 };
 
-// @todo: geen twee keer op zelfde kaart klikken
-// @todo: bij dragable kan je de kaart zien.
-
-
-// @todo: commentaar in je code verwerken (engels), bij programmeren is dit héél belangrijk :-)
-// @todo check when card is already clicked
 // @todo form validation
-// @todo create cards
-// @todo hide content cards
-// @todo shuffle cards
-// @todo is match when 2 clicked
 // @todo flipoverAnimation
-// @todo progress bar voor volgende beurt (bij message)
-// @todo
+// @todo progress bar counting down for next turn
+// @todo timeout instead of alert message (less clicks)
+// @todo Global functions
+// @todo layout
 
 Memory.init();
