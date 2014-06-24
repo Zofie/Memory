@@ -28,3 +28,7 @@ footer {
 		@include box-(6,0,0);
 	}
 }
+
+.message-box {
+	@include em-padding-tb(2,2);
+}

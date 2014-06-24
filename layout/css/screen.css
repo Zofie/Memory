@@ -1472,6 +1472,12 @@ footer div {
   padding-right: 0px;
 }
 
+/* line 32, ../scss/theme/modules/_frame.scss */
+.message-box {
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+}
+
 /* line 1, ../scss/theme/modules/_home.scss */
 .board__frame {
   border: 1px solid #b00626;

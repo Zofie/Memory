@@ -98,10 +98,23 @@ Memory = {
         // Hidde wrongly chosen images again because they were not equal
         $(sameCards[0]).addClass('is-hidden');
         $(sameCards[1]).addClass('is-hidden');
+        console.log('clicked hideWronglyClickedCards');
       }
 
       function messageAfterTurn(message){
-        alert(message);
+        // alert(message);
+        $('.message-box').append(message)
+      }
+
+      function messageBox(){
+        //if true hidewronglyclickedcards
+        //if false don't hidewronglyclickedcards
+        //
+        $('.message-box').on('click', function(){
+          clearClickedCards();
+          hideWronglyClickedCards();
+          emptyArray();
+        });
       }
     $('img').click(function(){
       // first check if card is already clicked or not
@@ -135,12 +148,10 @@ Memory = {
             numClicks = 0;
           } else {
             messageAfterTurn('Too bad');
-            clearClickedCards()
-            hideWronglyClickedCards()
+            messageBox()
             // reset number of clicks
             numClicks = 0;
-          };
-          emptyArray();
+          }
         }
       // }
       // Count clicks
@@ -162,5 +173,7 @@ Memory = {
 // @todo shuffle cards
 // @todo is match when 2 clicked
 // @todo flipoverAnimation
+// @todo progress bar voor volgende beurt (bij message)
+// @todo
 
 Memory.init();
