@@ -50,6 +50,7 @@ Memory = {
   },
 
   createBoard: function() {
+    $('.overlay').hide();
     // this is the array that will hold all the cards
     var cards = [];
     // we need diffCards so we know how many variations we have (2 same cards is one variation)
@@ -60,7 +61,7 @@ Memory = {
       cards.push(i);
       cards.push(i);
     }
-    
+
     cards = this.shuffleCards(cards);
 
     // loop over array
@@ -94,15 +95,33 @@ Memory = {
         $(sameCards[1]).addClass('is-hidden');
       }
 
-      function messageAfterTurn(message){
-        alert(message);
+      function messageWrongAfterTurn(message){
+        $('.message-box').append(message);
+        setTimeout(function() {
+            $('.message-box').empty();
+            $('.overlay').hide();
+            clearClickedCards();
+            hideWronglyClickedCards();
+            emptyArray();
+        }, 2000);
       }
+
+      function messageAfterTurn(message){
+        $('.message-box').append(message);
+        setTimeout(function() {
+            $('.message-box').empty();
+            $('.overlay').hide();
+            clearClickedCards();
+            emptyArray();
+        }, 1000);
+      }
+
     $('img').click(function(){
       // first check if card is already clicked or not
       // If so show message that player needs to choose an other card
       // If not continue playing
       if ($(this).hasClass('clicked')) {
-        messageAfterTurn('Choose different card');
+          //
       } else {
         // if (numClicks <= 2) {
         // ad class "clicked" to chosen image.
@@ -122,19 +141,18 @@ Memory = {
           sameCardsID.push($(this).attr('id'));
 
           if (sameCardsID[0] === sameCardsID[1]){
+            $('.overlay').show();
             messageAfterTurn('You\'ve chosen the same cards');
             // remove the clicked class to reset this turn
-            clearClickedCards()
+
             // reset number of clicks
             numClicks = 0;
           } else {
-            messageAfterTurn('Too bad');
-            clearClickedCards()
-            hideWronglyClickedCards()
+            $('.overlay').show();
+            messageWrongAfterTurn('Too bad');
             // reset number of clicks
             numClicks = 0;
           };
-          emptyArray();
         }
       // }
       // Count clicks
@@ -152,3 +170,4 @@ Memory = {
 // @todo layout
 
 Memory.init();
+
