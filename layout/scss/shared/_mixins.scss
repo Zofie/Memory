@@ -91,6 +91,11 @@
 	padding-bottom: $alpha-line-height * 1em * $bottom;
 }
 
+@mixin padding-lr($left: 1, $right: $left) {
+	padding-left: $grid-margin/$alpha-font-size * $left * 1em;
+	padding-right: $grid-margin/$alpha-font-size * $right * 1em;
+}
+
 // Padding-bottom based on the base line-height
 // @include padding-bottom(#bottom),
 

@@ -32,3 +32,26 @@ footer {
 .message-box {
 	@include em-padding-tb(2,2);
 }
+
+.overlay {
+	@include background-opacity(white, .5);
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	left:0;
+	top:0;
+	z-index:1 !important;
+	.message-box {
+		border: 1px solid black;
+		border-radius: $radius;
+		background-color: #FFF;
+
+		margin: 0 auto;
+		margin-top: 15%;
+		@include padding-tb(1,1);
+		@include padding-lr(1,1);
+
+		width: 25%;
+		height: 25%;
+	}
+}
