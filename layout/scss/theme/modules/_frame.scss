@@ -1,57 +1,63 @@
 .is-hidden {
-	opacity: 0;
+  opacity: 0;
 }
 
 .board__card {
-	@include box-(3,1,1);
-	@include em-padding-tb(1,1);
-	border: 1px solid #ccc;
-	background-color: #eee;
-	cursor: pointer;
+  @include box-(3,1,1);
+  @include em-padding-tb(1,1);
+  border: 1px solid #ccc;
+  background-color: #eee;
+  cursor: pointer;
 
-	@include mq($bp3){
-		@include box-(1.5,1,1);
-	}
+  @include mq($bp3){
+    @include box-(1.5,1,1);
+  }
 }
 
 #board {
-	@include em-margin-tb(0,2);
+  @include em-margin-tb(0,2);
 }
 
 footer {
-	background-color: $alpha-ui-color;
-	color: white;
-	a, a:visited {
-		color: darken(white, 25)
-	}
-	div {
-		@include box-(6,0,0);
-	}
+  background-color: $alpha-ui-color;
+  color: white;
+  a, a:visited {
+    color: darken(white, 25)
+  }
+  div {
+    @include box-(6,0,0);
+  }
 }
 
 .message-box {
-	@include em-padding-tb(2,2);
+  @include em-padding-tb(2,2);
 }
 
 .overlay {
-	@include background-opacity(white, .5);
-	height: 100%;
-	position: fixed;
-	width: 100%;
-	left:0;
-	top:0;
-	z-index:1 !important;
-	.message-box {
-		border: 1px solid black;
-		border-radius: $radius;
-		background-color: #FFF;
+  @include background-opacity(white, .5);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  left:0;
+  top:0;
+  z-index:1 !important;
+  .message-box {
+    border: 1px solid black;
+    border-radius: $radius;
+    background-color: #FFF;
 
-		margin: 0 auto;
-		margin-top: 15%;
-		@include padding-tb(1,1);
-		@include padding-lr(1,1);
+    margin: 0 auto;
+    margin-top: 15%;
+    @include padding-tb(1,1);
+    @include padding-lr(1,1);
 
-		width: 25%;
-		height: 25%;
-	}
+    width: 25%;
+    height: 25%;
+  }
+}
+
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
 }

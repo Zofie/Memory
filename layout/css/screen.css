@@ -1506,6 +1506,13 @@ footer div {
   height: 25%;
 }
 
+/* line 59, ../scss/theme/modules/_frame.scss */
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+
 /* line 1, ../scss/theme/modules/_home.scss */
 .board__frame {
   border: 1px solid #b00626;

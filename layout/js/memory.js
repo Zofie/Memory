@@ -46,10 +46,11 @@ Memory = {
   // we wan't our cards in a random order so we'll shuffle them
   shuffleCards: function(o){
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
+      return o;
   },
 
   createBoard: function() {
+
     $('.overlay').hide();
     // this is the array that will hold all the cards
     var cards = [];
@@ -77,7 +78,7 @@ Memory = {
     var sameCards = [];
     var sameCardsID = [];
 
-      function emptyArray(){
+    function emptyArray(){
         // empty array with chosen images html
         sameCards = [];
         // empty array with chosen images id
@@ -95,34 +96,50 @@ Memory = {
         $(sameCards[1]).addClass('is-hidden');
       }
 
+      function countdownBar() {
+        var counter = 280;
+        var interval = setInterval(function() {
+          counter--;
+          console.log(counter);
+          $('progress').val(counter)
+          if (counter == 0) {
+            // Display a login box
+            clearInterval(interval);
+          }
+        }, 1);
+      }
+
       function messageWrongAfterTurn(message){
         $('.message-box').append(message);
+
+        countdownBar();
+
         setTimeout(function() {
-            $('.message-box').empty();
-            $('.overlay').hide();
-            clearClickedCards();
-            hideWronglyClickedCards();
-            emptyArray();
-        }, 2000);
+          $('.message-box').empty();
+          $('.overlay').hide();
+          clearClickedCards();
+          hideWronglyClickedCards();
+          emptyArray();
+        }, 3000);
       }
 
       function messageAfterTurn(message){
         $('.message-box').append(message);
         setTimeout(function() {
-            $('.message-box').empty();
-            $('.overlay').hide();
-            clearClickedCards();
-            emptyArray();
+          $('.message-box').empty();
+          $('.overlay').hide();
+          clearClickedCards();
+          emptyArray();
         }, 1000);
       }
 
-    $('img').click(function(){
+      $('img').click(function(){
       // first check if card is already clicked or not
       // If so show message that player needs to choose an other card
       // If not continue playing
       if ($(this).hasClass('clicked')) {
           //
-      } else {
+        } else {
         // if (numClicks <= 2) {
         // ad class "clicked" to chosen image.
         $(this).toggleClass('clicked').toggleClass('is-hidden');
@@ -157,9 +174,9 @@ Memory = {
       // }
       // Count clicks
       numClicks++;
-      }
-    });
-  }
+    }
+  });
+}
 };
 
 // @todo form validation
