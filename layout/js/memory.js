@@ -96,38 +96,11 @@ Memory = {
         $(sameCards[1]).addClass('is-hidden');
       }
 
-      function countdownBar() {
-        var counter = 280;
-        var interval = setInterval(function() {
-          counter--;
-          console.log(counter);
-          $('progress').val(counter)
-          if (counter == 0) {
-            // Display a login box
-            clearInterval(interval);
-          }
-        }, 1);
-      }
-
-      function messageWrongAfterTurn(message){
-        $('.message-box').append(message);
-
-        countdownBar();
-
-        setTimeout(function() {
-          $('.message-box').empty();
-          $('.overlay').hide();
-          clearClickedCards();
-          hideWronglyClickedCards();
-          emptyArray();
-        }, 3000);
-      }
-
       function messageAfterTurn(message){
         $('.message-box').append(message);
         setTimeout(function() {
           $('.message-box').empty();
-          $('.overlay').hide();
+
           clearClickedCards();
           emptyArray();
         }, 1000);
@@ -166,7 +139,7 @@ Memory = {
             numClicks = 0;
           } else {
             $('.overlay').show();
-            messageWrongAfterTurn('Too bad');
+            Memory.Messages.messageWrongAfterTurn('Too bad');
             // reset number of clicks
             numClicks = 0;
           };
@@ -177,7 +150,39 @@ Memory = {
     }
   });
 }
-};
+}
+
+Memory.Messages = {
+
+  messageWrongAfterTurn: function(message){
+    $('.message-box').append(message);
+
+    Memory.Messages.countdownBar();
+
+    setTimeout(function() {
+      $('.message-box').empty();
+      $('.overlay').hide();
+      Memory.clearClickedCards();
+      Memory.hideWronglyClickedCards();
+      Memory.emptyArray();
+    }, 3000);
+  },
+
+  countdownBar: function() {
+    var counter = 700;
+    var interval = setInterval(function() {
+      counter--;
+      console.log(counter);
+      $('progress').val(counter);
+
+      if (counter == 0) {
+        // Display a login box
+        $('.overlay').hide();
+        clearInterval(interval);
+      }
+    }, 1);
+  }
+}
 
 // @todo form validation
 // @todo flipoverAnimation
@@ -188,3 +193,10 @@ Memory = {
 
 Memory.init();
 
+
+
+// todo: progress en overlay: communiceren
+// todo: methods los koppelen (op zelfde niveau + groeperen)
+// todo: opkuisen
+// example: frontend.js fork (zonder this)
+// wat moet een message doen: tonen en sluiten

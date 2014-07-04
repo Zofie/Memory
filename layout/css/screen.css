@@ -1513,6 +1513,11 @@ progress {
   width: 100%;
 }
 
+/* line 65, ../scss/theme/modules/_frame.scss */
+progress[value]::-webkit-progress-bar {
+  background-color: red;
+}
+
 /* line 1, ../scss/theme/modules/_home.scss */
 .board__frame {
   border: 1px solid #b00626;

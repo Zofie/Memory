@@ -61,3 +61,7 @@ progress {
   appearance: none;
   width: 100%;
 }
+
+progress[value]::-webkit-progress-bar {
+  background-color: red
+}
