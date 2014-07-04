@@ -73,6 +73,12 @@ Memory = {
     });
   },
 
+
+  clearClickedCards: function(){
+    // remove the clicked class to reset this turn
+    $('img').removeClass('clicked');
+  },
+
   chooseTwoCards: function() {
     var numClicks = 1;
     var sameCards = [];
@@ -94,16 +100,6 @@ Memory = {
         // Hidde wrongly chosen images again because they were not equal
         $(sameCards[0]).addClass('is-hidden');
         $(sameCards[1]).addClass('is-hidden');
-      }
-
-      function messageAfterTurn(message){
-        $('.message-box').append(message);
-        setTimeout(function() {
-          $('.message-box').empty();
-
-          clearClickedCards();
-          emptyArray();
-        }, 1000);
       }
 
       $('img').click(function(){
@@ -132,7 +128,7 @@ Memory = {
 
           if (sameCardsID[0] === sameCardsID[1]){
             $('.overlay').show();
-            messageAfterTurn('You\'ve chosen the same cards');
+            Memory.Messages.messageAfterTurn('You\'ve chosen the same cards');
             // remove the clicked class to reset this turn
 
             // reset number of clicks
@@ -155,33 +151,72 @@ Memory = {
 Memory.Messages = {
 
   messageWrongAfterTurn: function(message){
-    $('.message-box').append(message);
+    var counter = 300;
 
-    Memory.Messages.countdownBar();
+    // Add message that player chose wrong cards
+    $('.message-text').append(message);
 
-    setTimeout(function() {
-      $('.message-box').empty();
-      $('.overlay').hide();
-      Memory.clearClickedCards();
-      Memory.hideWronglyClickedCards();
-      Memory.emptyArray();
-    }, 3000);
-  },
-
-  countdownBar: function() {
-    var counter = 700;
     var interval = setInterval(function() {
       counter--;
       console.log(counter);
+
+      // change progress bar from 100% to 0
       $('progress').val(counter);
 
-      if (counter == 0) {
-        // Display a login box
+      if (counter == 0){
+        console.log('0');
+
+        // Hide overlay message when counter is 0
         $('.overlay').hide();
+
+        // Remove message after turn
+        $('.message-text').empty();
+
+
+        // Clear progress bar -> back to 100%
         clearInterval(interval);
       }
     }, 1);
-  }
+  },
+
+  // messageWrongAfterTurn: function(message){
+  //   $('.message-box').append(message);
+
+  //   Memory.Messages.countdownBar();
+
+  //   setTimeout(function() {
+  //     $('.message-box').empty();
+  //     $('.overlay').hide();
+  //     Memory.clearClickedCards();
+  //     Memory.hideWronglyClickedCards();
+  //     Memory.emptyArray();
+  //   }, 3000);
+  // },
+
+  // messageAfterTurn: function(message){
+  //   $('.message-box').append(message);
+  //   setTimeout(function() {
+  //     $('.message-box').empty();
+
+  //     Memory.chooseTwoCards.clearClickedCards();
+  //     Memory.chooseTwoCards.emptyArray();
+  //   }, 1000);
+  // },
+
+  // countdownBar: function() {
+  //   var counter = 700;
+  //   var interval = setInterval(function() {
+  //     counter--;
+  //     console.log(counter);
+  //     $('progress').val(counter);
+
+  //     if (counter == 0) {
+  //       // Display a login box
+  //       $('.overlay').hide();
+  //       clearInterval(interval);
+  //     }
+  //   }, 1);
+  // },
 }
 
 // @todo form validation
