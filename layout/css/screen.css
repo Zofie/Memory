@@ -1437,7 +1437,7 @@ textarea {
   background-color: #eee;
   cursor: pointer;
 }
-@media screen and (min-width: 42.5em) {
+@media screen and (min-width: 71.25em) {
   /* line 5, ../scss/theme/modules/_frame.scss */
   .board__card {
     width: 12.5%;

@@ -2,7 +2,7 @@ Memory = {
 
   settings: {
     maxPlayers: 4,
-    cardsAmount: 16
+    cardsAmount: 8
   },
 
   elements: {
@@ -105,10 +105,10 @@ Memory = {
       // If so show message that player needs to choose an other card
       // If not continue playing
       if ($(this).hasClass('clicked')) {
-          //
+          // Do nothing
         } else {
         // if (numClicks <= 2) {
-        // ad class "clicked" to chosen image.
+        // add class "clicked" to chosen image.
         $(this).toggleClass('clicked').toggleClass('is-hidden');
         if (numClicks === 1 ) {
 
@@ -149,126 +149,4 @@ Memory = {
 }
 }
 
-Memory.Messages = {
-
-  messageWrongAfterTurn: function(message){
-    var counter = 300;
-
-    // Add message that player chose wrong cards
-    $('.message-text').append(message);
-
-    var interval = setInterval(function() {
-      counter--;
-      console.log(counter);
-
-      // change progress bar from 100% to 0
-      $('progress').val(counter);
-
-      if (counter == 0){
-        console.log('0');
-
-        // Hide overlay message when counter is 0
-        $('.overlay').hide();
-
-        // Remove message after turn
-        $('.message-text').empty();
-
-        // Clear progress bar -> back to 100%
-        clearInterval(interval);
-
-        Memory.clearClickedCards();
-        Memory.hideWronglyClickedCards();
-
-        Memory.emptyArray();
-      }
-    }, 1);
-  },
-
-  messageAfterTurn: function(message){
-    var counter = 300;
-
-    // Add message that player chose wrong cards
-    $('.message-text').append(message);
-
-    var interval = setInterval(function() {
-      counter--;
-      console.log(counter);
-
-      // change progress bar from 100% to 0
-      $('progress').val(counter);
-
-      if (counter == 0){
-        console.log('0');
-
-        // Hide overlay message when counter is 0
-        $('.overlay').hide();
-
-        // Remove message after turn
-        $('.message-text').empty();
-
-        // Clear progress bar -> back to 100%
-        clearInterval(interval);
-
-        Memory.clearClickedCards();
-
-        Memory.emptyArray();
-      }
-    }, 1);
-  },
-
-  // messageWrongAfterTurn: function(message){
-  //   $('.message-box').append(message);
-
-  //   Memory.Messages.countdownBar();
-
-  //   setTimeout(function() {
-  //     $('.message-box').empty();
-  //     $('.overlay').hide();
-  //     Memory.clearClickedCards();
-  //     Memory.hideWronglyClickedCards();
-  //     Memory.emptyArray();
-  //   }, 3000);
-  // },
-
-  // messageAfterTurn: function(message){
-  //   $('.message-box').append(message);
-  //   setTimeout(function() {
-  //     $('.message-box').empty();
-
-  //     Memory.chooseTwoCards.clearClickedCards();
-  //     Memory.chooseTwoCards.emptyArray();
-  //   }, 1000);
-  // },
-
-  // countdownBar: function() {
-  //   var counter = 700;
-  //   var interval = setInterval(function() {
-  //     counter--;
-  //     console.log(counter);
-  //     $('progress').val(counter);
-
-  //     if (counter == 0) {
-  //       // Display a login box
-  //       $('.overlay').hide();
-  //       clearInterval(interval);
-  //     }
-  //   }, 1);
-  // },
-}
-
-// @todo form validation
-// @todo flipoverAnimation
-// @todo progress bar counting down for next turn
-// @todo timeout instead of alert message (less clicks)
-// @todo Global functions
-// @todo layout
-
 Memory.init();
-
-
-
-// todo: progress en overlay: communiceren
-// todo: methods los koppelen (op zelfde niveau + groeperen)
-// todo: opkuisen
-// example: frontend.js fork (zonder this)
-// wat moet een message doen: tonen en sluiten

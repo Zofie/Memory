@@ -9,7 +9,7 @@
   background-color: #eee;
   cursor: pointer;
 
-  @include mq($bp3){
+  @include mq($bp5){
     @include box-(1.5,1,1);
   }
 }
