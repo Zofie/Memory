@@ -1,7 +1,7 @@
 Memory = {
 
   settings: {
-    cardsAmount: 2,
+    cardsAmount: 4,
     maxPlayers: 4
   },
 
@@ -75,6 +75,7 @@ Memory = {
 
   chooseTwoCards: function() {
     var numClicks = 1;
+    var cardsOver = 0;
 
     $('img').click(function(){
 
@@ -83,10 +84,12 @@ Memory = {
       // If not continue playing
       if ($(this).hasClass('clicked')) {
           // Do nothing
-        } else {
-        // if (numClicks <= 2) {
-        // add class "clicked" to chosen image.
+      } else {
+
         $(this).toggleClass('clicked').toggleClass('is-hidden');
+      
+        // if (numClicks <= 2) {
+        
         if (numClicks === 1 ) {
 
           // Push the html of the chosen img to the array sameCards
@@ -95,34 +98,33 @@ Memory = {
           elements.sameCardsID.push($(this).attr('id'));
 
         } else if (numClicks === 2) {
-          // push the second chosen img html to the array sameCards
-          elements.sameCards.push($(this));
-          // @todo: deze tweede array lijkt mij niet echt nodig aangezien je deze
-          // info al hebt in je eerste array
-          // probeer eens sameCards[0].attr('id')
-          // push the second chosen img id to the array sameCardsID
-          elements.sameCardsID.push($(this).attr('id'));
-          console.log(elements.sameCardsID);
+            // push the second chosen img html to the array sameCards
+            elements.sameCards.push($(this));
+            // @todo: deze tweede array lijkt mij niet echt nodig aangezien je deze
+            // info al hebt in je eerste array
+            // probeer eens sameCards[0].attr('id')
+            // push the second chosen img id to the array sameCardsID
+            elements.sameCardsID.push($(this).attr('id'));
+            // console.log(elements.sameCardsID);
 
-          if (elements.sameCardsID[0] === elements.sameCardsID[1]){
-            $('.overlay').show();
-            Memory.Messages.messageAfterTurn('You\'ve chosen the same cards');
-            // remove the clicked class to reset this turn
-
-            // reset number of clicks
-            numClicks = 0;
-          } else {
-            $('.overlay').show();
-            Memory.Messages.messageWrongAfterTurn('Too bad');
-            // reset number of clicks
-            numClicks = 0;
-          };
-
-        }
+            if (elements.sameCardsID[0] === elements.sameCardsID[1]){
+                $('.overlay').show();
+                Memory.Messages.messageAfterTurn('You\'ve chosen the same cards');
+                
+                // reset number of clicks
+                numClicks = 0;
+            } else {
+      
+              $('.overlay').show();
+              Memory.Messages.messageWrongAfterTurn('Too bad');
+              // reset number of clicks
+              numClicks = 0;
+            }
+          }
+         }
         // }
         // Count clicks
         numClicks++;
-      }
-    });
+      });
   }
 }

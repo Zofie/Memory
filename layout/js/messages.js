@@ -8,13 +8,11 @@ Memory.Messages = {
 
     var interval = setInterval(function() {
       counter--;
-      console.log(counter);
 
       // change progress bar from 100% to 0
       $('progress').val(counter);
 
       if (counter == 0){
-        console.log('0');
 
         // Hide overlay message when counter is 0
         $('.overlay').hide();
@@ -41,13 +39,11 @@ Memory.Messages = {
 
     var interval = setInterval(function() {
       counter--;
-      console.log(counter);
 
       // change progress bar from 100% to 0
       $('progress').val(counter);
 
       if (counter == 0){
-        console.log('0');
 
         // Hide overlay message when counter is 0
         $('.overlay').hide();
