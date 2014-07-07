@@ -11,7 +11,9 @@ Memory = {
     playerName: $('.player-name'),
     scoreBoard: '<div>scoreboard shizzle comes here</div>',
     playNow: $('.play-now'),
-    card: '<div class=\'board__card\'></div>'
+    card: '<div class=\'board__card\'></div>',
+    sameCards: [],
+    sameCardsID: []
   },
 
   init: function() {
@@ -79,30 +81,26 @@ Memory = {
     $('img').removeClass('clicked');
   },
 
+  hideWronglyClickedCards: function (){
+    // Hidde wrongly chosen images again because they were not equal
+    $(elements.sameCards[0]).addClass('is-hidden');
+    $(elements.sameCards[1]).addClass('is-hidden');
+  },
+
+  emptyArray: function(){
+    // empty array with chosen images html
+    elements.sameCards = [];
+    // empty array with chosen images id
+    elements.sameCardsID = [];
+  },
+
+
+
   chooseTwoCards: function() {
     var numClicks = 1;
-    var sameCards = [];
-    var sameCardsID = [];
-
-    function emptyArray(){
-        // empty array with chosen images html
-        sameCards = [];
-        // empty array with chosen images id
-        sameCardsID = [];
-      };
-
-      function clearClickedCards(){
-        // remove the clicked class to reset this turn
-        $('img').removeClass('clicked');
-      }
-
-      function hideWronglyClickedCards(){
-        // Hidde wrongly chosen images again because they were not equal
-        $(sameCards[0]).addClass('is-hidden');
-        $(sameCards[1]).addClass('is-hidden');
-      }
 
       $('img').click(function(){
+
       // first check if card is already clicked or not
       // If so show message that player needs to choose an other card
       // If not continue playing
@@ -113,20 +111,23 @@ Memory = {
         // ad class "clicked" to chosen image.
         $(this).toggleClass('clicked').toggleClass('is-hidden');
         if (numClicks === 1 ) {
+
           // Push the html of the chosen img to the array sameCards
-          sameCards.push($(this));
+          elements.sameCards.push($(this));
           // Push the id of the chosen image to the array sameCardsID
-          sameCardsID.push($(this).attr('id'));
+          elements.sameCardsID.push($(this).attr('id'));
+
         } else if (numClicks === 2) {
           // push the second chosen img html to the array sameCards
-          sameCards.push($(this));
+          elements.sameCards.push($(this));
           // @todo: deze tweede array lijkt mij niet echt nodig aangezien je deze
           // info al hebt in je eerste array
           // probeer eens sameCards[0].attr('id')
           // push the second chosen img id to the array sameCardsID
-          sameCardsID.push($(this).attr('id'));
+          elements.sameCardsID.push($(this).attr('id'));
+          console.log(elements.sameCardsID);
 
-          if (sameCardsID[0] === sameCardsID[1]){
+          if (elements.sameCardsID[0] === elements.sameCardsID[1]){
             $('.overlay').show();
             Memory.Messages.messageAfterTurn('You\'ve chosen the same cards');
             // remove the clicked class to reset this turn
@@ -172,9 +173,45 @@ Memory.Messages = {
         // Remove message after turn
         $('.message-text').empty();
 
+        // Clear progress bar -> back to 100%
+        clearInterval(interval);
+
+        Memory.clearClickedCards();
+        Memory.hideWronglyClickedCards();
+
+        Memory.emptyArray();
+      }
+    }, 1);
+  },
+
+  messageAfterTurn: function(message){
+    var counter = 300;
+
+    // Add message that player chose wrong cards
+    $('.message-text').append(message);
+
+    var interval = setInterval(function() {
+      counter--;
+      console.log(counter);
+
+      // change progress bar from 100% to 0
+      $('progress').val(counter);
+
+      if (counter == 0){
+        console.log('0');
+
+        // Hide overlay message when counter is 0
+        $('.overlay').hide();
+
+        // Remove message after turn
+        $('.message-text').empty();
 
         // Clear progress bar -> back to 100%
         clearInterval(interval);
+
+        Memory.clearClickedCards();
+
+        Memory.emptyArray();
       }
     }, 1);
   },
