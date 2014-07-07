@@ -1,19 +1,16 @@
 Memory = {
 
   settings: {
-    maxPlayers: 4,
-    cardsAmount: 8
+    cardsAmount: 2,
+    maxPlayers: 4
   },
 
   elements: {
-    addPlayer: $('.js-add-player'),
     board: $('#board'),
-    playerName: $('.player-name'),
-    scoreBoard: '<div>scoreboard shizzle comes here</div>',
-    playNow: $('.play-now'),
     card: '<div class=\'board__card\'></div>',
     sameCards: [],
-    sameCardsID: []
+    sameCardsID: [],
+    cardsOver: $('#board img.is-hidden').length
   },
 
   init: function() {
@@ -21,28 +18,8 @@ Memory = {
     settings = this.settings;
     elements = this.elements;
 
-    this.addPlayers();
     this.createBoard();
     this.chooseTwoCards();
-  },
-
-  addPlayers: function() {
-
-    elements.addPlayer.submit(function(event) {
-      event.preventDefault();
-      $('ul').append('<li>' + elements.playerName.val() + elements.scoreBoard+ '</li>');
-
-      var listLength =  $( '.players-list li').length;
-      switch(true) {
-        case listLength === 2:
-        $('input').removeClass('is-hidden');
-        break;
-
-        case listLength === settings.maxPlayers:
-        elements.addPlayer.hide();
-        break;
-      }
-    });
   },
 
   // we wan't our cards in a random order so we'll shuffle them
@@ -99,7 +76,7 @@ Memory = {
   chooseTwoCards: function() {
     var numClicks = 1;
 
-      $('img').click(function(){
+    $('img').click(function(){
 
       // first check if card is already clicked or not
       // If so show message that player needs to choose an other card
@@ -140,13 +117,12 @@ Memory = {
             // reset number of clicks
             numClicks = 0;
           };
-        }
-      // }
-      // Count clicks
-      numClicks++;
-    }
-  });
-}
-}
 
-Memory.init();
+        }
+        // }
+        // Count clicks
+        numClicks++;
+      }
+    });
+  }
+}

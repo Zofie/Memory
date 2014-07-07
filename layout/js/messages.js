@@ -61,9 +61,10 @@ Memory.Messages = {
         Memory.clearClickedCards();
 
         Memory.emptyArray();
+
       }
     }, 1);
-  },
+  }
 }
 
 Memory.init();
