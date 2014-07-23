@@ -62,5 +62,3 @@ Memory.Messages = {
     }, 1);
   }
 }
-
-Memory.init();
