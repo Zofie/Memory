@@ -82,14 +82,13 @@ Memory = {
       // first check if card is already clicked or not
       // If so show message that player needs to choose an other card
       // If not continue playing
-      if ($(this).hasClass('clicked')) {
-          // Do nothing
-      } else {
+      if ($(this).hasClass('clicked') == false) {
+
 
         $(this).toggleClass('clicked').toggleClass('is-hidden');
-      
+
         // if (numClicks <= 2) {
-        
+
         if (numClicks === 1 ) {
 
           // Push the html of the chosen img to the array sameCards
@@ -110,21 +109,23 @@ Memory = {
             if (elements.sameCardsID[0] === elements.sameCardsID[1]){
                 $('.overlay').show();
                 Memory.Messages.messageAfterTurn('You\'ve chosen the same cards');
-                
+
                 // reset number of clicks
                 numClicks = 0;
             } else {
-      
+
               $('.overlay').show();
               Memory.Messages.messageWrongAfterTurn('Too bad');
               // reset number of clicks
               numClicks = 0;
             }
           }
+          numClicks++;
          }
         // }
         // Count clicks
-        numClicks++;
+
       });
   }
 }
+ Memory.init();
