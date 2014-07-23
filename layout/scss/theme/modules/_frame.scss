@@ -2,6 +2,10 @@
   opacity: 0;
 }
 
+h3 {
+  @include padding-tb(0,.5);
+}
+
 .board__card {
   @include box-(3,1,1);
   @include em-padding-tb(1,1);
@@ -10,7 +14,7 @@
   cursor: pointer;
 
   @include mq($bp5){
-    @include box-(1.5,1,1);
+    @include box-(2,1,1);
   }
 }
 

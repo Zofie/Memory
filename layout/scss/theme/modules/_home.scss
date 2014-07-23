@@ -15,5 +15,5 @@
 
 	.players-list li {
 		display: inline-block;
-		@include box-(3,0,0);
+		@include box-(6,0,0);
 	}

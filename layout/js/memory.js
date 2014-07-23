@@ -1,7 +1,7 @@
 Memory = {
 
   settings: {
-    cardsAmount: 4,
+    cardsAmount: 24,
   },
 
   elements: {

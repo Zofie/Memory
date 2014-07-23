@@ -1425,6 +1425,12 @@ textarea {
 }
 
 /* line 5, ../scss/theme/modules/_frame.scss */
+h3 {
+  padding-top: 0em;
+  padding-bottom: 0.75em;
+}
+
+/* line 9, ../scss/theme/modules/_frame.scss */
 .board__card {
   width: 25%;
   float: left;
@@ -1438,9 +1444,9 @@ textarea {
   cursor: pointer;
 }
 @media screen and (min-width: 71.25em) {
-  /* line 5, ../scss/theme/modules/_frame.scss */
+  /* line 9, ../scss/theme/modules/_frame.scss */
   .board__card {
-    width: 12.5%;
+    width: 16.66667%;
     float: left;
     position: relative;
     padding-left: 10px;
@@ -1448,22 +1454,22 @@ textarea {
   }
 }
 
-/* line 17, ../scss/theme/modules/_frame.scss */
+/* line 21, ../scss/theme/modules/_frame.scss */
 #board {
   margin-top: 0em;
   margin-bottom: 1.25em;
 }
 
-/* line 21, ../scss/theme/modules/_frame.scss */
+/* line 25, ../scss/theme/modules/_frame.scss */
 footer {
   background-color: #b00626;
   color: white;
 }
-/* line 24, ../scss/theme/modules/_frame.scss */
+/* line 28, ../scss/theme/modules/_frame.scss */
 footer a, footer a:visited {
   color: #bfbfbf;
 }
-/* line 27, ../scss/theme/modules/_frame.scss */
+/* line 31, ../scss/theme/modules/_frame.scss */
 footer div {
   width: 50%;
   float: left;
@@ -1472,13 +1478,13 @@ footer div {
   padding-right: 0px;
 }
 
-/* line 32, ../scss/theme/modules/_frame.scss */
+/* line 36, ../scss/theme/modules/_frame.scss */
 .message-box {
   padding-top: 1.25em;
   padding-bottom: 1.25em;
 }
 
-/* line 36, ../scss/theme/modules/_frame.scss */
+/* line 40, ../scss/theme/modules/_frame.scss */
 .overlay {
   background-color: transparent;
   background-color: rgba(255, 255, 255, 0.5);
@@ -1491,7 +1497,7 @@ footer div {
   top: 0;
   z-index: 1 !important;
 }
-/* line 44, ../scss/theme/modules/_frame.scss */
+/* line 48, ../scss/theme/modules/_frame.scss */
 .overlay .message-box {
   border: 1px solid black;
   border-radius: 5px;
@@ -1506,14 +1512,14 @@ footer div {
   height: 25%;
 }
 
-/* line 59, ../scss/theme/modules/_frame.scss */
+/* line 63, ../scss/theme/modules/_frame.scss */
 progress {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
 }
 
-/* line 65, ../scss/theme/modules/_frame.scss */
+/* line 69, ../scss/theme/modules/_frame.scss */
 progress[value]::-webkit-progress-bar {
   background-color: red;
 }
@@ -1541,7 +1547,7 @@ progress[value]::-webkit-progress-bar {
 /* line 16, ../scss/theme/modules/_home.scss */
 .players-list li {
   display: inline-block;
-  width: 25%;
+  width: 50%;
   float: left;
   position: relative;
   padding-left: 0px;
