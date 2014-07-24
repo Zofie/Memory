@@ -1567,6 +1567,70 @@ progress[value]::-webkit-progress-bar {
   padding-right: 0px;
 }
 
+/* line 1, ../scss/theme/modules/_memory.scss */
+.is-hidden {
+  opacity: 0;
+}
+
+/* line 5, ../scss/theme/modules/_memory.scss */
+.board__card {
+  width: 25%;
+  float: left;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  cursor: pointer;
+}
+@media screen and (min-width: 42.5em) {
+  /* line 5, ../scss/theme/modules/_memory.scss */
+  .board__card {
+    width: 12.5%;
+    float: left;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* line 17, ../scss/theme/modules/_memory.scss */
+.turn-message {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* line 21, ../scss/theme/modules/_memory.scss */
+#board {
+  margin-top: 0em;
+  margin-bottom: 1.25em;
+}
+
+/* line 25, ../scss/theme/modules/_memory.scss */
+footer {
+  background-color: #b00626;
+  color: white;
+}
+/* line 28, ../scss/theme/modules/_memory.scss */
+footer a, footer a:visited {
+  color: #bfbfbf;
+}
+/* line 31, ../scss/theme/modules/_memory.scss */
+footer div {
+  width: 50%;
+  float: left;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/* line 36, ../scss/theme/modules/_memory.scss */
+.highlighted-player {
+  color: green;
+}
+
 /* line 5, ../scss/theme/modules/_styleguide.scss */
 .main-content {
   width: 100%;
