@@ -11,15 +11,15 @@ http://memory.sophiedebrabander.be/ (wip - no auto-update)
 
 ### SPELERS
 
-* ~~ Als geen naam wordt ingevuld dan blijft er standaard speler 1/2 staan ~~
-* ~~ Druk op Start ~~
-    * ~~ Board verschijnt ~~
-    * ~~ Hightlight Speler 1 ~~
+* ~~Als geen naam wordt ingevuld dan blijft er standaard speler 1/2 staan~~
+* ~~Druk op Start~~
+    * ~~Board verschijnt~~
+    * ~~Hightlight Speler 1~~
 
 ### SPEL
 
-* ~~ first player 1 ~~
-    * ~~ highlight player 1 ~~
+* ~~first player 1~~
+    * ~~highlight player 1~~
 * player1 chooses 2 cards
 * correct?
 * Add 1 point
