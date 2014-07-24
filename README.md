@@ -9,14 +9,14 @@ http://memory.sophiedebrabander.be/ (wip - no auto-update)
 
 ## TODO
 
-# SPELERS
+### SPELERS
 
 *Als geen naam wordt ingevuld dan blijft er standaard speler 1/2 staan
 *Druk op Start
     * Board verschijnt
     * Hightlight Speler 1
 
-# SPEL
+### SPEL
 
 * first player 1
     * highlight player 1
