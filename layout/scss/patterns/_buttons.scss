@@ -3,6 +3,7 @@
 	@include btn-color;
 	width: auto;
 	@include em-margin-tb(1,1);
+    outline: none;
 }
 
 .btn--small {

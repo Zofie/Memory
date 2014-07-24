@@ -919,6 +919,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   width: auto;
   margin-top: 0.625em;
   margin-bottom: 0.625em;
+  outline: none;
 }
 /* line 75, ../scss/shared/_ui.scss */
 .btn:hover, .btn:focus {
@@ -941,7 +942,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   color: #FFF;
 }
 
-/* line 8, ../scss/patterns/_buttons.scss */
+/* line 9, ../scss/patterns/_buttons.scss */
 .btn--small {
   padding-left: 0.3125em;
   padding-right: 0.3125em;
@@ -952,7 +953,7 @@ article, aside, figure, footer, header, hgroup, nav, section, main {
   height: 2.1875em;
 }
 
-/* line 12, ../scss/patterns/_buttons.scss */
+/* line 13, ../scss/patterns/_buttons.scss */
 .btn--right {
   float: right;
 }
@@ -1508,7 +1509,7 @@ footer div {
   padding-bottom: 1.5em;
   padding-left: 0.625em;
   padding-right: 0.625em;
-  width: 25%;
+  width: 300px;
   height: 25%;
 }
 
@@ -1522,6 +1523,18 @@ progress {
 /* line 69, ../scss/theme/modules/_frame.scss */
 progress[value]::-webkit-progress-bar {
   background-color: red;
+}
+
+/* line 73, ../scss/theme/modules/_frame.scss */
+.startToPlay {
+  text-align: center;
+}
+/* line 74, ../scss/theme/modules/_frame.scss */
+.startToPlay button {
+  margin: 0 auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  outline: none;
 }
 
 /* line 1, ../scss/theme/modules/_home.scss */

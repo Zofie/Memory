@@ -1,7 +1,7 @@
 Memory = {
 
   settings: {
-    cardsAmount: 24,
+    cardsAmount: 6,
   },
 
   elements: {
@@ -59,8 +59,8 @@ Memory = {
 
   hideWronglyClickedCards: function (){
     // Hidde wrongly chosen images again because they were not equal
-    $(elements.sameCards[0]).addClass('is-hidden');
-    $(elements.sameCards[1]).addClass('is-hidden');
+    $(Memory.elements.sameCards[0]).addClass('is-hidden');
+    $(Memory.elements.sameCards[1]).addClass('is-hidden');
   },
 
   emptyArray: function(){
@@ -86,26 +86,25 @@ Memory = {
 
         $(this).toggleClass('clicked').toggleClass('is-hidden');
 
-        // if (numClicks <= 2) {
-
         if (numClicks === 1 ) {
 
+          console.log(Memory.elements.sameCards);
+
           // Push the html of the chosen img to the array sameCards
-          elements.sameCards.push($(this));
+          Memory.elements.sameCards.push($(this));
           // Push the id of the chosen image to the array sameCardsID
-          elements.sameCardsID.push($(this).attr('id'));
+          Memory.elements.sameCardsID.push($(this).attr('id'));
 
         } else if (numClicks === 2) {
             // push the second chosen img html to the array sameCards
-            elements.sameCards.push($(this));
+            Memory.elements.sameCards.push($(this));
             // @todo: deze tweede array lijkt mij niet echt nodig aangezien je deze
             // info al hebt in je eerste array
             // probeer eens sameCards[0].attr('id')
             // push the second chosen img id to the array sameCardsID
-            elements.sameCardsID.push($(this).attr('id'));
+            Memory.elements.sameCardsID.push($(this).attr('id'));
             // console.log(elements.sameCardsID);
-
-            if (elements.sameCardsID[0] === elements.sameCardsID[1]){
+            if (Memory.elements.sameCardsID[0] === Memory.elements.sameCardsID[1]){
                 $('.overlay').show();
                 Memory.Messages.messageAfterTurn('You\'ve chosen the same cards');
 

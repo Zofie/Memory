@@ -55,7 +55,7 @@ footer {
     @include padding-tb(1,1);
     @include padding-lr(1,1);
 
-    width: 25%;
+    width: 300px;
     height: 25%;
   }
 }
@@ -68,4 +68,14 @@ progress {
 
 progress[value]::-webkit-progress-bar {
   background-color: red
+}
+
+.startToPlay {
+  button {
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    outline: none;
+  }
+  text-align: center
 }
