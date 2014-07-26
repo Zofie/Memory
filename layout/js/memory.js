@@ -65,9 +65,9 @@ Memory = {
 
   emptyArray: function(){
     // empty array with chosen images html
-    elements.sameCards = [];
+    Memory.elements.sameCards = [];
     // empty array with chosen images id
-    elements.sameCardsID = [];
+    Memory.elements.sameCardsID = [];
   },
 
 
