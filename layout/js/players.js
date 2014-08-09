@@ -21,7 +21,6 @@ Players = {
 
        playerName = $(this).find('.player-name-input').val();
        $(this).find('.player-name').empty().append(playerName);
-       $(this).append('<p class="scoreboard">0 punten</p>');
        $(this).find('form').hide();
 
     });
