@@ -1,7 +1,7 @@
 Players = {
   elements: {
     addPlayer: $('.js-add-player'),
-    scoreBoard: '<div>0 punten</div>',
+    scoreBoard: '<div><span class="js-score">0</span> punten</div>',
     playNow: $('.play-now'),
     start: $('#js-startToPlay'),
   },
@@ -40,7 +40,7 @@ Players = {
         // Show score
         && $('.player').append(elements.scoreBoard)
         // show which players turn it is
-        && $('#player1').addClass('highlighted-player')
+        && $('#player1').addClass('current-player')
         );
     })
   },

@@ -1,7 +1,7 @@
 Memory = {
 
   settings: {
-    cardsAmount: 6,
+    cardsAmount: 20,
   },
 
   elements: {
@@ -75,20 +75,22 @@ Memory = {
   chooseTwoCards: function() {
     var numClicks = 1;
     var cardsOver = 0;
+    $('img.already-clicked').unbind();
 
     $('img').click(function(){
 
       // first check if card is already clicked or not
       // If so show message that player needs to choose an other card
       // If not continue playing
-      if ($(this).hasClass('clicked') == false) {
+      if ($(this).hasClass('clicked') === false) {
 
 
         $(this).toggleClass('clicked').toggleClass('is-hidden');
 
         if (numClicks === 1 ) {
+          console.log(numClicks);
 
-          console.log(Memory.elements.sameCards);
+          // console.log(Memory.elements.sameCards);
 
           // Push the html of the chosen img to the array sameCards
           Memory.elements.sameCards.push($(this));
@@ -107,15 +109,30 @@ Memory = {
             if (Memory.elements.sameCardsID[0] === Memory.elements.sameCardsID[1]){
                 $('.overlay').show();
                 Memory.Messages.messageAfterTurn('You\'ve chosen the same cards');
+                $(this).removeClass('is-hidden').addClass('already-clicked');
 
                 // reset number of clicks
                 numClicks = 0;
+
+                score = parseInt($('.current-player .js-score').text());
+
+                if (score === 0 ){
+                  $('.current-player .js-score').text(score + 1)
+                } else {
+                  $('.current-player .js-score').text(score * 2)
+                }
+
             } else {
 
               $('.overlay').show();
               Memory.Messages.messageWrongAfterTurn('Too bad');
               // reset number of clicks
               numClicks = 0;
+
+              // don't add a point and change current player
+
+              $('.player').toggleClass('waiting').toggleClass('current-player')
+
             }
           }
           numClicks++;

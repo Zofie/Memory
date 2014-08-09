@@ -51,12 +51,12 @@ footer {
     background-color: #FFF;
 
     margin: 0 auto;
-    margin-top: 15%;
+    margin-top: 1em;
     @include padding-tb(1,1);
     @include padding-lr(1,1);
 
     width: 300px;
-    height: 25%;
+    height: 100px;
   }
 }
 

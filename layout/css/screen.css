@@ -1504,13 +1504,13 @@ footer div {
   border-radius: 5px;
   background-color: #FFF;
   margin: 0 auto;
-  margin-top: 15%;
+  margin-top: 1em;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
   padding-left: 0.625em;
   padding-right: 0.625em;
   width: 300px;
-  height: 25%;
+  height: 100px;
 }
 
 /* line 63, ../scss/theme/modules/_frame.scss */
@@ -1627,7 +1627,7 @@ footer div {
 }
 
 /* line 36, ../scss/theme/modules/_memory.scss */
-.highlighted-player {
+.current-player {
   color: green;
 }
 

@@ -1,7 +1,7 @@
 Memory.Messages = {
 
   messageWrongAfterTurn: function(message){
-    var counter = 300;
+    var counter = 150;
 
     // Add message that player chose wrong cards
     $('.message-text').append(message);
@@ -32,7 +32,7 @@ Memory.Messages = {
   },
 
   messageAfterTurn: function(message){
-    var counter = 300;
+    var counter = 150;
 
     // Add message that player chose wrong cards
     $('.message-text').append(message);
