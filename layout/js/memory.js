@@ -1,7 +1,7 @@
 Memory = {
 
   settings: {
-    cardsAmount: 20,
+    cardsAmount: 4,
   },
 
   elements: {
@@ -19,6 +19,7 @@ Memory = {
 
     this.createBoard();
     this.chooseTwoCards();
+    this.gameFinished();
   },
 
   // we wan't our cards in a random order so we'll shuffle them
@@ -54,7 +55,13 @@ Memory = {
 
   clearClickedCards: function(){
     // remove the clicked class to reset this turn
-    $('img').removeClass('clicked');
+    $('img.clicked').removeClass('clicked');
+  },
+
+
+  disableClickedCards: function(){
+    // remove the clicked class to reset this turn
+    $('img.clicked').removeClass('clicked').addClass('already-clicked');
   },
 
   hideWronglyClickedCards: function (){
@@ -82,13 +89,12 @@ Memory = {
       // first check if card is already clicked or not
       // If so show message that player needs to choose an other card
       // If not continue playing
-      if ($(this).hasClass('clicked') === false) {
+      if ($(this).hasClass('clicked') === false && $(this).hasClass('already-clicked') === false) {
 
 
         $(this).toggleClass('clicked').toggleClass('is-hidden');
 
         if (numClicks === 1 ) {
-          console.log(numClicks);
 
           // console.log(Memory.elements.sameCards);
 
@@ -107,9 +113,14 @@ Memory = {
             Memory.elements.sameCardsID.push($(this).attr('id'));
             // console.log(elements.sameCardsID);
             if (Memory.elements.sameCardsID[0] === Memory.elements.sameCardsID[1]){
-                $('.overlay').show();
+
+                if ($('#board .already-clicked').length === settings.cardsAmount ) {
+                  alert('done')
+                } else {
+                  $('.overlay').show();
+                }
+
                 Memory.Messages.messageAfterTurn('You\'ve chosen the same cards');
-                $(this).removeClass('is-hidden').addClass('already-clicked');
 
                 // reset number of clicks
                 numClicks = 0;
@@ -135,12 +146,21 @@ Memory = {
 
             }
           }
+
           numClicks++;
+
          }
         // }
         // Count clicks
+        //
+
 
       });
+
+  },
+
+  gameFinished: function() {
+
   }
 }
  Memory.init();

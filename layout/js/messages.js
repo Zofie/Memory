@@ -54,7 +54,24 @@ Memory.Messages = {
         // Clear progress bar -> back to 100%
         clearInterval(interval);
 
-        Memory.clearClickedCards();
+        Memory.disableClickedCards();
+
+        if (($('#board .already-clicked').length ) === settings.cardsAmount ) {
+         var player1score = parseInt($('#player1 .js-score').text());
+         var player1name = $('#player1 .player-name').text()
+         var player2name = $('#player2 .player-name').text()
+         var player2score = parseInt($('#player2 .js-score').text());
+          if ( player1score > player2score) {
+            $('.the-end').removeClass('display-none');
+            $('.end-message').append(player1name + ' heeft gewonnen');
+          } else if ( player1score < player2score) {
+            $('.the-end').removeClass('display-none');
+            $('.end-message').append(player2name + ' heeft gewonnen');
+          } else {
+            $('.the-end').removeClass('display-none');
+            $('.end-message').append('Gelijkspel');
+          }
+        }
 
         Memory.emptyArray();
 

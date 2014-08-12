@@ -11,7 +11,6 @@ Players = {
 
     this.addPlayers();
     this.startToPlay();
-    this.playerTurn();
 
   },
 
@@ -44,10 +43,6 @@ Players = {
         );
     })
   },
-
-  playerTurn: function() {
-
-  }
 }
 
 Players.init();
