@@ -38,7 +38,8 @@ footer {
 }
 
 .current-player {
-	color: green;
+	background-color: #eee;
+  color: $alpha-ui-color;
 }
 
 .is-hidden {

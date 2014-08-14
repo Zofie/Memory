@@ -1,7 +1,7 @@
 Memory = {
 
   settings: {
-    cardsAmount: 4,
+    cardsAmount: 18,
   },
 
   elements: {
@@ -19,7 +19,6 @@ Memory = {
 
     this.createBoard();
     this.chooseTwoCards();
-    this.gameFinished();
   },
 
   // we wan't our cards in a random order so we'll shuffle them
@@ -77,8 +76,6 @@ Memory = {
     Memory.elements.sameCardsID = [];
   },
 
-
-
   chooseTwoCards: function() {
     var numClicks = 1;
     var cardsOver = 0;
@@ -100,17 +97,20 @@ Memory = {
 
           // Push the html of the chosen img to the array sameCards
           Memory.elements.sameCards.push($(this));
+
           // Push the id of the chosen image to the array sameCardsID
           Memory.elements.sameCardsID.push($(this).attr('id'));
 
         } else if (numClicks === 2) {
             // push the second chosen img html to the array sameCards
             Memory.elements.sameCards.push($(this));
+
             // @todo: deze tweede array lijkt mij niet echt nodig aangezien je deze
             // info al hebt in je eerste array
             // probeer eens sameCards[0].attr('id')
             // push the second chosen img id to the array sameCardsID
             Memory.elements.sameCardsID.push($(this).attr('id'));
+
             // console.log(elements.sameCardsID);
             if (Memory.elements.sameCardsID[0] === Memory.elements.sameCardsID[1]){
 
@@ -132,7 +132,6 @@ Memory = {
                 } else {
                   $('.current-player .js-score').text(score * 2)
                 }
-
             } else {
 
               $('.overlay').show();
@@ -156,11 +155,6 @@ Memory = {
 
 
       });
-
-  },
-
-  gameFinished: function() {
-
   }
 }
  Memory.init();
